@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Proyectos - Estudio Loica</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            color: #111111;
+        }
+
+        .header {
+            padding: 2rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            letter-spacing: 0.2rem;
+            color: #111111;
+        }
+
+        .header a {
+            color: #111111;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.1rem;
+            border-bottom: 1px solid #111111;
+            padding-bottom: 2px;
+        }
+
+        .grilla {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            padding: 1rem 3rem 4rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .proyecto {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .proyecto img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .proyecto:hover img {
+            transform: scale(1.03);
+        }
+
+        .proyecto .nombre {
+            padding: 0.5rem 0;
+            font-size: 0.8rem;
+            letter-spacing: 0.05rem;
+            color: #111111;
+        }
+
+        .modal-fondo {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-fondo.activo {
+            display: flex;
+        }
+
+        .modal {
+            background: #1a1a1a;
+            max-width: 700px;
+            width: 90%;
+            padding: 2rem;
+            position: relative;
+            border-radius: 4px;
+        }
+
+        .modal img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal h2 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 0.15rem;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+        }
+
+        .modal p {
+            font-size: 0.85rem;
+            line-height: 1.7;
+            color: #aaaaaa;
+        }
+
+        .modal .cerrar {
+            position: absolute;
+            top: 1rem; right: 1.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #ffffff;
+            background: none;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>LOICA ESTUDIO</h1>
+        <a href="index.html">← Volver</a>
+    </div>
+
+    <div class="grilla">
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 1', 'images/p1.jpg', 'Descripción del proyecto 1.')">
+            <img src="images/p1.jpg" alt="Proyecto 1" />
+            <div class="nombre">Proyecto 1</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 2', 'images/p2.jpg', 'Descripción del proyecto 2.')">
+            <img src="images/p2.jpg" alt="Proyecto 2" />
+            <div class="nombre">Proyecto 2</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 3', 'images/p3.jpg', 'Descripción del proyecto 3.')">
+            <img src="images/p3.jpg" alt="Proyecto 3" />
+            <div class="nombre">Proyecto 3</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 4', 'images/p4.jpg', 'Descripción del proyecto 4.')">
+            <img src="images/p4.jpg" alt="Proyecto 4" />
+            <div class="nombre">Proyecto 4</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 5', 'images/p5.jpg', 'Descripción del proyecto 5.')">
+            <img src="images/p5.jpg" alt="Proyecto 5" />
+            <div class="nombre">Proyecto 5</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 6', 'images/p6.jpg', 'Descripción del proyecto 6.')">
+            <img src="images/p6.jpg" alt="Proyecto 6" />
+            <div class="nombre">Proyecto 6</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 7', 'images/p7.jpg', 'Descripción del proyecto 7.')">
+            <img src="images/p7.jpg" alt="Proyecto 7" />
+            <div class="nombre">Proyecto 7</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 8', 'images/p8.jpg', 'Descripción del proyecto 8.')">
+            <img src="images/p8.jpg" alt="Proyecto 8" />
+            <div class="nombre">Proyecto 8</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 9', 'images/p9.jpg', 'Descripción del proyecto 9.')">
+            <img src="images/p9.jpg" alt="Proyecto 9" />
+            <div class="nombre">Proyecto 9</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 10', 'images/p10.jpg', 'Descripción del proyecto 10.')">
+            <img src="images/p10.jpg" alt="Proyecto 10" />
+            <div class="nombre">Proyecto 10</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 11', 'images/p11.jpg', 'Descripción del proyecto 11.')">
+            <img src="images/p11.jpg" alt="Proyecto 11" />
+            <div class="nombre">Proyecto 11</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 12', 'images/p12.jpg', 'Descripción del proyecto 12.')">
+            <img src="images/p12.jpg" alt="Proyecto 12" />
+            <div class="nombre">Proyecto 12</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 13', 'images/p13.jpg', 'Descripción del proyecto 13.')">
+            <img src="images/p13.jpg" alt="Proyecto 13" />
+            <div class="nombre">Proyecto 13</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 14', 'images/p14.jpg', 'Descripción del proyecto 14.')">
+            <img src="images/p14.jpg" alt="Proyecto 14" />
+            <div class="nombre">Proyecto 14</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 15', 'images/p15.jpg', 'Descripción del proyecto 15.')">
+            <img src="images/p15.jpg" alt="Proyecto 15" />
+            <div class="nombre">Proyecto 15</div>
+        </div>
+
+        <div class="proyecto" onclick="abrirModal('Proyecto 16', 'images/p16.jpg', 'Descripción del proyecto 16.')">
+            <img src="images/p16.jpg" alt="Proyecto 16" />
+            <div class="nombre">Proyecto 16</div>
+        </div>
+
+    </div>
+
+    <div class="modal-fondo" id="modal-fondo" onclick="cerrarModal(event)">
+        <div class="modal">
+            <button class="cerrar" onclick="cerrarModal()">✕</button>
+            <img id="modal-img" src="" alt="" />
+            <h2 id="modal-titulo"></h2>
+            <p id="modal-desc"></p>
+        </div>
+    </div>
+
+    <script>
+        function abrirModal(titulo, imagen, descripcion) {
+            document.getElementById('modal-titulo').innerText = titulo;
+            document.getElementById('modal-img').src = imagen;
+            document.getElementById('modal-desc').innerText = descripcion;
+            document.getElementById('modal-fondo').classList.add('activo');
+        }
+
+        function cerrarModal(event) {
+            if (!event || event.target === document.getElementById('modal-fondo') || event.target.classList.contains('cerrar')) {
+                document.getElementById('modal-fondo').classList.remove('activo');
+            }
+        }
+    </script>
+
+</body>
+</html>
