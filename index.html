@@ -1,349 +1,243 @@
-<!DOCTYPE HTML>
-<!--
-    Story by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        /* Estilos Base de la Grilla */
-      .contenedor-grilla {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 30px;
-    margin-top: -110px;
-}
+        .contenedor-grilla {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 30px;
+            margin-top: -110px;
+        }
 
         .item-proyecto {
             width: 100%;
-            aspect-ratio: 3 / 2; /* Proporción de tus fotos */
-            overflow: hidden;    /* Corta lo que sobresalga del marco */
-            background-color: #f9f9f9; /* Color de fondo mientras carga */
+            aspect-ratio: 3 / 2;
+            overflow: hidden;
+            background-color: #f9f9f9;
         }
 
         .item-proyecto img {
             width: 100%;
             height: 100%;
-            object-fit: cover;   /* Llena el marco sin deformarse */
+            object-fit: cover;
             display: block;
         }
 
-        /* Estilos Base Generales */
         body {
             margin: 0;
             padding: 0;
-            background-color: #FBF9EF; /* Fondo crema */
-            font-family: 'Helvetica', 'Arial', sans-serif; /* Tipografía limpia */
+            background-color: #FBF9EF;
+            font-family: 'Helvetica', 'Arial', sans-serif;
         }
 
-        /* Encabezado Principal (Escritorio) */
         header {
             min-height: 152px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-
-            /* Poco espacio arriba, mucho espacio abajo */
-            padding-top: 15px;      
-            padding-bottom: 50px;   /* Gran colchón de aire blanco hacia los proyectos */
-            padding-left: 25px;
-            padding-right: 25px;
-
+            padding: 15px 25px 50px 25px;
             background-color: #FBF9EF;
-            border-bottom: 1px solid #FBF9EF; 
-            
+            border-bottom: 1px solid #000000;
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        /* Logo / Nombre del Estudio */
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            letter-spacing: 1px; 
-            text-transform: uppercase; 
-        }
-
-        /* Menú de Navegación */
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 15px; 
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #666; 
-            font-size: 16px;
-        }
-
-        nav a:hover {
-            color: #000; 
-        }
-
-        /* Contenedor de Imágenes Adicionales */
-        .galeria {
-            display: flex;
-            gap: 10px;
-            padding: 20px;
-        }
-
-        .galeria img {
-            width: 33.33%; 
-            height: auto;
-            filter: grayscale(20%); 
-        }
-/* ==========================================
-           FOOTER PORTADA - BARRA DELGADA Y COMPACTA
-           ========================================== */
-
-
-
         .footer-portada {
-            display: flex !important;
-            flex-direction: row !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            clear: both !important;             
-            width: 100% !important;
-            position: relative !important;      
-            z-index: 999 !important;            
-            background-color: #FBF9EF !important; 
-            
-            /* BARRA DELGADA: Reducimos padding vertical */
-            border-top: 1px solid #000000 !important; 
-            padding: 10px 40px !important;            /* Achicado de 20px a 10px */
-            box-sizing: border-box !important;
-            margin-top: 30px !important;              /* Menos espacio entre proyectos y footer */
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background-color: #FBF9EF;
+            border-top: 1px solid #000000;
+            padding: 10px 25px;
+            box-sizing: border-box;
+            margin-top: 30px;
         }
 
         .footer-portada .footer-text {
-            font-family: 'Helvetica', 'Arial', sans-serif !important;
-            font-size: 10px !important;               /* Un punto más pequeña para que se vea más fina */
-            font-weight: bold !important;             
-            letter-spacing: 2px !important;           /* Ajustado para que quepa mejor */
-            color: #646464 !important;                
-            text-transform: uppercase !important;     
-            margin: 0 !important;
-            padding: 0 !important;
-            display: inline-block !important;
+            font-family: 'Helvetica', 'Arial', sans-serif;
+            font-size: 9px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #646464;
+            text-transform: uppercase;
+            margin: 0;
+            padding: 0;
         }
-     
 
-        /* =========================================
-           RESPONSIVE CELULAR (OPTIMIZADO Y CENTRADO)
-        ========================================= */
         @media screen and (max-width: 768px) {
 
-            /* BLOQUEO ABSOLUTO DE SCROLL HORIZONTAL */
             html, body {
                 overflow-x: hidden !important;
                 overflow-y: auto !important;
                 height: auto !important;
                 width: 100% !important;
-                max-width: 100% !important;
                 margin: 0 !important;
                 padding: 0 !important;
             }
 
-            /* HEADER EN CELULAR */
-            header {
+           header {
+    display: block !important;
+    padding: 20px 15px 15px 15px !important;
+    text-align: center !important;
+}
+
+            /* LOGO CENTRADO EN MÓVIL */
+            .logo-centro {
+                position: static !important;
+                transform: none !important;
+                left: auto !important;
                 display: flex !important;
                 flex-direction: column !important;
-                align-items: center !important; /* Centra todo en el eje horizontal móvil */
-                justify-content: center !important;
-                padding: 20px 15px !important;
-                min-height: auto !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                box-sizing: border-box !important;
-                margin: 0 auto !important;
+                align-items: center !important;
+                gap: 10px !important;
+                order: 1 !important;
             }
 
-            /* BLOQUE LOGO + TEXTO */
-            header > div:first-child {
-                display: flex !important;
-                flex-direction: column !important;
-                align-items: center !important;    
-                justify-content: center !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                gap: 15px !important;
-                box-sizing: border-box !important;
-                margin: 0 auto !important;
-                padding: 0 !important;
-            }
+          header img {
+    height: 55px !important;
+    width: auto !important;
+}
 
-            /* LOGO MÓVIL */
-            header img {
-                height: 65px !important;
-                width: auto !important;
-                display: block !important;
-                margin: 0 auto !important;
-            }
-
-            /* TEXTO DESCRIPTIVO MÓVIL */
             header p {
-                width: 100% !important;
-                max-width: 95% !important; /* Margen de seguridad para que 'Exterior' no baje solo */
-                font-size: 11px !important;
-                line-height: 1.6 !important;
-                text-align: center !important;     
-                box-sizing: border-box !important;
-                margin: 5px auto 0 auto !important;
-                padding: 0 !important;
-            }
-
-            /* MENÚ MÓVIL */
-            nav {
-                margin-top: 25px !important;
-                width: 100% !important;
+                font-size: 10px !important;
                 text-align: center !important;
-                box-sizing: border-box !important;
+                margin: 0 auto !important;
             }
 
-            /* OCULTAR VISOR EN CELULAR */
+            nav {
+                order: 2 !important;
+                text-align: center !important;
+                width: 100% !important;
+            }
+
+            .espacio-izq {
+                display: none !important;
+            }
+
+            .nav-derecha {
+                order: 2 !important;
+                align-items: center !important;
+                width: 100% !important;
+            }
+
             #visor-proyectos {
                 display: none !important;
             }
 
-            /* GRILLA VERTICAL (FOTOS PORTADA EN CELULAR) */
             .contenedor-grilla {
                 display: flex !important;
                 flex-direction: column !important;
-                padding: 15px 0px !important; /* Fotos de borde a borde */
+                padding: 15px 0 !important;
                 gap: 12px !important;
                 width: 100% !important;
-                max-width: 100% !important;
-                box-sizing: border-box !important;
-                height: auto !important;
+                margin-top: 0 !important;
             }
 
-            /* IMÁGENES RESPONSIVE */
-            .item-proyecto,
-            .item-proyecto a {
-                display: block !important;
+            .item-proyecto {
                 width: 100% !important;
-                max-width: 100% !important;
                 height: auto !important;
-                box-sizing: border-box !important;
+                aspect-ratio: auto !important;
             }
 
             .item-proyecto img {
                 width: 100% !important;
-                max-width: 100% !important;
                 height: auto !important;
                 aspect-ratio: auto !important;
-                display: block !important;
                 object-fit: contain !important;
             }
 
-            /* AJUSTE BARRA DE FOOTER EN CELULAR */
             .footer-portada {
-                margin-top: 30px !important;
-                padding: 30px 15px 40px 15px !important; 
-            }
-            .footer-portada p {
-                font-size: 10px !important;
+                flex-direction: column !important;
+                gap: 5px !important;
+                text-align: center !important;
+                padding: 20px 15px !important;
+                margin-top: 20px !important;
             }
         }
     </style>
 </head>
 <body>
 
-   <header style="display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 25px; background-color: #FBF9EF; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #000000 !important;">       
-   
-    <!-- LOGO Y TEXTO - POSICIÓN ABSOLUTA AL CENTRO -->
-    <div style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 15px;">
-        <a href="index.html">
-            <img src="images/LOICA.png" alt="Loica Estudio" style="height: 65px; width: auto; display: block;">
-        </a>
-        <p class="home-tags" style="margin: 0; font-size: 11px; letter-spacing: 2px; color: #4c4c4c; text-transform: uppercase; text-align: center;">
-            Jardines | Paisajismo | Arquitectura Exterior
-        </p>
-    </div>
+    <header style="display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 25px; background-color: #FBF9EF; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #000000;">
 
-    <!-- ESPACIO IZQUIERDO VACÍO -->
-    <div style="flex: 1;"></div>
-
-    <!-- NAVEGACIÓN DERECHA -->
-    <div style="display: flex; flex-direction: column; align-items: flex-end;">
-        <nav style="margin-top: 5px; font-family: 'Helvetica', sans-serif;">
-            <a href="04.información.html" style="font-size: 14px; color: #000000; text-decoration: none; text-transform: uppercase;">Información</a> 
-            <span style="color: #000000;"> | </span>
-            <a href="03.contacto copy.html" style="font-size: 14px; color: #6b6a6a; text-decoration: none; text-transform: uppercase;">Contacto</a>
-        </nav>
-        <div id="visor-proyectos" style="margin-top: 115px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #747474; font-family: 'Helvetica', sans-serif; text-align: right; pointer-events: none;"></div>
-    </div>
-
-</header>
-
-            <!-- RECEPTOR DE NOMBRES PROYECTOS -->
-            <div id="visor-proyectos" style="margin-top: 115px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: #b2b2b2; font-family: 'Helvetica', sans-serif; text-align: right; pointer-events: none;"></div>
+        <!-- LOGO Y TEXTO CENTRADO -->
+        <div class="logo-centro" style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 15px;">
+            <a href="index.html">
+                <img src="images/LOICA.png" alt="Loica Estudio" style="height: 65px; width: auto; display: block;">
+            </a>
+            <p class="home-tags" style="margin: 0; font-size: 11px; letter-spacing: 2px; color: #4c4c4c; text-transform: uppercase; text-align: center;">
+                Jardines | Paisajismo | Arquitectura Exterior
+            </p>
         </div>
+
+        <!-- ESPACIO IZQUIERDO -->
+        <div class="espacio-izq" style="flex: 1;"></div>
+
+        <!-- NAVEGACIÓN DERECHA -->
+        <div class="nav-derecha" style="display: flex; flex-direction: column; align-items: flex-end;">
+            <nav style="margin-top: 5px; font-family: 'Helvetica', sans-serif;">
+                <a href="04.información.html" style="font-size: 14px; color: #000000; text-decoration: none; text-transform: uppercase;">Información</a>
+                <span style="color: #000000;"> | </span>
+                <a href="03.contacto copy.html" style="font-size: 14px; color: #6b6a6a; text-decoration: none; text-transform: uppercase;">Contacto</a>
+            </nav>
+            <div id="visor-proyectos" style="margin-top: 115px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #747474; font-family: 'Helvetica', sans-serif; text-align: right; pointer-events: none;"></div>
+        </div>
+
     </header>
 
-    <!-- CONTENIDO PRINCIPAL (GRILLA COMPLETADA) -->
     <main class="contenedor-grilla">
 
-        <a href="05.1.AGUASCLARAS.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO AGUAS CLARAS | CACHAGUA | 2024 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.1.AGUASCLARAS.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO AGUAS CLARAS | CACHAGUA | 2024')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/FOTO01.JPG" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.2.AMANCAY.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO AMANCAY | ZAPALLAR NORTE | 2025 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.2.AMANCAY.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO AMANCAY | ZAPALLAR NORTE | 2025')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/IMG021.JPG" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.5.CURACAVI.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO PARCELA | CURACAVÍ | 2023 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.5.CURACAVI.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO PARCELA | CURACAVÍ | 2023')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/IMG05.JPG" style="width: 100%; display: block;">
         </a>
 
-          <a href="05.6.PERALES.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO ACCESO CONDOMINIO PERALES | MAITENCILLO | 2025 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.6.PERALES.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO ACCESO CONDOMINIO PERALES | MAITENCILLO | 2025')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/IMG06.JPG" style="width: 100%; display: block;">
         </a>
 
-          <a href="05.12.PERALES2.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO CONDOMINIO PERALES | MAITENCILLO | 2025 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.12.PERALES2.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO CONDOMINIO PERALES | MAITENCILLO | 2025')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/PERALES/Render Arreglado 02.1.png" style="width: 100%; display: block;">
         </a>
 
-
-          <a href="05.13.CACHAGUA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO CACHAGUA | EN CONSTRUCCIÓN | 2026 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.13.CACHAGUA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO CACHAGUA | EN CONSTRUCCIÓN | 2026')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/CACHAGUA/ca03.png" style="width: 100%; display: block;">
         </a>
 
-
-        <a href="05.3.GUANAY.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO GUANAY | MAITENCILLO | 2026 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.3.GUANAY.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO GUANAY | MAITENCILLO | 2026')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/IMG03.JPG" style="width: 100%; display: block;">
         </a>
-
 
         <a href="05.10.JTRIDER.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO JOSÉ TOMÁS RIDER | PROVIDENCIA | 2024')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/JTRIDER/RIDER01.jpg" style="width: 100%; display: block;">
         </a>
 
-      
-
-        <a href="05.14.DDA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO DIEGO DE ALMAGRO | PROVIDENCIA | 2023 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.14.DDA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO DIEGO DE ALMAGRO | PROVIDENCIA | 2023')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/DDA/DSC06810.JPG" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.4.HUENTELAUQUEN.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO HUENTELAUQUÉN | CANELA | MI PARQUE  ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.4.HUENTELAUQUEN.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO HUENTELAUQUÉN | CANELA | MI PARQUE')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/IMG04.JPG" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.7.CANELA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO PLAZA MIRADOR | CANELA | MI PARQUE  ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.7.CANELA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO PLAZA MIRADOR | CANELA | MI PARQUE')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/PLAZA MIRADOR CANELA/02.03 CANELA BAJA DRON-4.jpg" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.8.FREIRINA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO FREIRINA | ATACAMA | MI PARQUE | 2021 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.8.FREIRINA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO FREIRINA | ATACAMA | MI PARQUE | 2021')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/IMG08.JPG" style="width: 100%; display: block;">
         </a>
 
@@ -351,13 +245,12 @@
             <img src="images/LOSVILOS/IMG_1646 copia.jpg" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.11.LAS PALMERAS.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO PARQUE LAS PALMERAS | RENCA | MI PARQUE ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.11.LAS PALMERAS.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO PARQUE LAS PALMERAS | RENCA | MI PARQUE')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/LAS PALMERAS/lpmasterplan.jpg" style="width: 100%; display: block;">
         </a>
 
     </main>
 
-    <!-- INTERACCIÓN VISOR -->
     <script>
         function mostrarNombre(texto) {
             document.getElementById('visor-proyectos').innerText = texto;
@@ -368,10 +261,10 @@
         }
     </script>
 
- <footer class="footer-portada">
+    <footer class="footer-portada">
         <div class="footer-text">LOICA ESTUDIO ® 2026</div>
         <div class="footer-text">Málaga 888, Las Condes, Santiago, Chile</div>
     </footer>
-    
+
 </body>
 </html>
