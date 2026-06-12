@@ -143,21 +143,29 @@
             display: block;
         }
 
-        /* FOOTER (PC) */
-        .footer-fixed {
-            position: fixed;
-            bottom: 15px;
-            left: 25px;
-            width: calc(100% - 50px);
-        }
+       /* FOOTER (PC) */
+.footer-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #000000;
+    padding: 10px 25px 15px 25px;
+    box-sizing: border-box;
+    background-color: #FBF9EF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        .footer-fixed p {
-            font-size: 10px;
-            color: #5e5d5d;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0;
-        }
+.footer-fixed p {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #646464;
+    margin: 0;
+}
 
       /* ==========================================
             RESPONSIVE MÓVIL
@@ -329,9 +337,10 @@
 
     </div>
 
-    <footer class="footer-fixed">
-        <p>LOICA ESTUDIO ® 2026</p>
-    </footer>
+   <footer class="footer-fixed" style="display: flex; justify-content: space-between;">
+    <p>LOICA ESTUDIO ® 2026</p>
+    <p>Arquitectura y Paisajismo</p>
+</footer>
 
 </body>
 </html>

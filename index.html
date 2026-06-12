@@ -11,12 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         /* Estilos Base de la Grilla */
-        .contenedor-grilla {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); /* 3 columnas como el referente */
-            gap: 15px; /* El aire blanco entre fotos */
-            padding: 25px;
-        }
+      .contenedor-grilla {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 30px;
+    margin-top: -110px;
+}
 
         .item-proyecto {
             width: 100%;
@@ -49,7 +50,7 @@
 
             /* Poco espacio arriba, mucho espacio abajo */
             padding-top: 15px;      
-            padding-bottom: 150px;   /* Gran colchón de aire blanco hacia los proyectos */
+            padding-bottom: 50px;   /* Gran colchón de aire blanco hacia los proyectos */
             padding-left: 25px;
             padding-right: 25px;
 
@@ -129,7 +130,7 @@
             font-size: 10px !important;               /* Un punto más pequeña para que se vea más fina */
             font-weight: bold !important;             
             letter-spacing: 2px !important;           /* Ajustado para que quepa mejor */
-            color: #000000 !important;                
+            color: #646464 !important;                
             text-transform: uppercase !important;     
             margin: 0 !important;
             padding: 0 !important;
@@ -258,81 +259,91 @@
 </head>
 <body>
 
-    <!-- ENCABEZADO -->
-    <header style="display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 25px; background-color: #FBF9EF; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #000000 !important;">       
-       
-       <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 10px; padding-left: 100px;">
-            <a href="index.html">
-                <img src="images/LOICA.png" alt="Loica Estudio" 
-                     style="height: 65px; width: auto; display: block; margin-left: 245px;">
-            </a>
+   <header style="display: flex; justify-content: space-between; align-items: flex-start; padding: 10px 25px; background-color: #FBF9EF; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #000000 !important;">       
+   
+    <!-- LOGO Y TEXTO - POSICIÓN ABSOLUTA AL CENTRO -->
+    <div style="position: absolute; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 15px;">
+        <a href="index.html">
+            <img src="images/LOICA.png" alt="Loica Estudio" style="height: 65px; width: auto; display: block;">
+        </a>
+        <p class="home-tags" style="margin: 0; font-size: 11px; letter-spacing: 2px; color: #4c4c4c; text-transform: uppercase; text-align: center;">
+            Jardines | Paisajismo | Arquitectura Exterior
+        </p>
+    </div>
 
-            <p class="home-tags" style="margin: 0; font-size: 11px; letter-spacing: 2px; color: #4c4c4c; text-transform: uppercase;">
-                Jardines | Paisajismo | Arquitectura Exterior
-            </p>
-        </div>
+    <!-- ESPACIO IZQUIERDO VACÍO -->
+    <div style="flex: 1;"></div>
 
-        <div style="display: flex; flex-direction: column; align-items: flex-end; flex-grow: 1;">
-            <!-- NAVEGACIÓN -->
-            <nav style="margin-top: 5px; font-family: 'Helvetica', sans-serif;">
-                <a href="04.información.html" style="font-size: 14px; color: #000000; text-decoration: none; text-transform: uppercase;">Información</a> 
-                <span style="color: #000000;"> | </span>
-                <a href="03.contacto copy.html" style="font-size: 14px; color: #6b6a6a; text-decoration: none; text-transform: uppercase;">Contacto</a>
-            </nav>
+    <!-- NAVEGACIÓN DERECHA -->
+    <div style="display: flex; flex-direction: column; align-items: flex-end;">
+        <nav style="margin-top: 5px; font-family: 'Helvetica', sans-serif;">
+            <a href="04.información.html" style="font-size: 14px; color: #000000; text-decoration: none; text-transform: uppercase;">Información</a> 
+            <span style="color: #000000;"> | </span>
+            <a href="03.contacto copy.html" style="font-size: 14px; color: #6b6a6a; text-decoration: none; text-transform: uppercase;">Contacto</a>
+        </nav>
+        <div id="visor-proyectos" style="margin-top: 115px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #747474; font-family: 'Helvetica', sans-serif; text-align: right; pointer-events: none;"></div>
+    </div>
+
+</header>
 
             <!-- RECEPTOR DE NOMBRES PROYECTOS -->
-            <div id="visor-proyectos" style="margin-top: 115px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: #747474; font-family: 'Helvetica', sans-serif; text-align: right; pointer-events: none;"></div>
+            <div id="visor-proyectos" style="margin-top: 115px; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 4px; color: #b2b2b2; font-family: 'Helvetica', sans-serif; text-align: right; pointer-events: none;"></div>
         </div>
     </header>
 
     <!-- CONTENIDO PRINCIPAL (GRILLA COMPLETADA) -->
     <main class="contenedor-grilla">
 
-        <a href="05.1.AGUASCLARAS.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO AGUAS CLARAS | CACHAGUA')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.1.AGUASCLARAS.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO AGUAS CLARAS | CACHAGUA | 2024 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/FOTO01.JPG" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.2.AMANCAY.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO AMANCAY | ZAPALLAR NORTE')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.2.AMANCAY.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO AMANCAY | ZAPALLAR NORTE | 2025 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/IMG021.JPG" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.3.GUANAY.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO GUANAY | MAITENCILLO')" onmouseout="limpiarNombre()" style="cursor: pointer;">
-            <img src="images/IMG03.JPG" style="width: 100%; display: block;">
-        </a>
-
-        <a href="05.5.CURACAVI.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO PARCELA | CURACAVÍ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.5.CURACAVI.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO PARCELA | CURACAVÍ | 2023 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/IMG05.JPG" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.6.PERALES.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO ACCESO CONDOMINIO PERALES | MAITENCILLO')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+          <a href="05.6.PERALES.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO ACCESO CONDOMINIO PERALES | MAITENCILLO | 2025 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/IMG06.JPG" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.10.JTRIDER.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO JOSÉ TOMÁS RIDER | PROVIDENCIA')" onmouseout="limpiarNombre()" style="cursor: pointer;">
-            <img src="images/JTRIDER/RIDER01.jpg" style="width: 100%; display: block;">
-        </a>
-
-        <a href="05.13.CACHAGUA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO CACHAGUA | EN CONSTRUCCIÓN ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
-            <img src="images/CACHAGUA/ca02.png" style="width: 100%; display: block;">
-        </a>
-
-        <a href="05.12.PERALES2.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO CONDOMINIO PERALES | MAITENCILLO  ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+          <a href="05.12.PERALES2.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO CONDOMINIO PERALES | MAITENCILLO | 2025 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/PERALES/Render Arreglado 02.1.png" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.14.DDA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO DIEGO DE ALMAGRO | PROVIDENCIA')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+
+          <a href="05.13.CACHAGUA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO CACHAGUA | EN CONSTRUCCIÓN | 2026 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+            <img src="images/CACHAGUA/ca03.png" style="width: 100%; display: block;">
+        </a>
+
+
+        <a href="05.3.GUANAY.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO GUANAY | MAITENCILLO | 2026 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+            <img src="images/IMG03.JPG" style="width: 100%; display: block;">
+        </a>
+
+
+        <a href="05.10.JTRIDER.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO JOSÉ TOMÁS RIDER | PROVIDENCIA | 2024')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+            <img src="images/JTRIDER/RIDER01.jpg" style="width: 100%; display: block;">
+        </a>
+
+      
+
+        <a href="05.14.DDA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO DIEGO DE ALMAGRO | PROVIDENCIA | 2023 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/DDA/DSC06810.JPG" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.4.HUENTELAUQUEN.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO HUENTELAUQUÉN | CANELA')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.4.HUENTELAUQUEN.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO HUENTELAUQUÉN | CANELA | MI PARQUE  ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/IMG04.JPG" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.7.CANELA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO PLAZA MIRADOR | CANELA')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.7.CANELA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO PLAZA MIRADOR | CANELA | MI PARQUE  ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/PLAZA MIRADOR CANELA/02.03 CANELA BAJA DRON-4.jpg" style="width: 100%; display: block;">
         </a>
 
-        <a href="05.8.FREIRINA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO FREIRINA | ATACAMA')" onmouseout="limpiarNombre()" style="cursor: pointer;">
+        <a href="05.8.FREIRINA.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO FREIRINA | ATACAMA | MI PARQUE | 2021 ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
             <img src="images/IMG08.JPG" style="width: 100%; display: block;">
         </a>
 
