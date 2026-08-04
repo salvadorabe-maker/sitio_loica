@@ -18,6 +18,7 @@
         .header {
             padding: 25px;
             border-bottom: 1px solid #d8d8d8;
+            position: relative;
         }
 
         .titulo {
@@ -25,6 +26,19 @@
             letter-spacing: 3px;
             text-transform: uppercase;
             color: #444;
+        }
+
+        .btn-volver {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 10px;
+            font-weight: 700;
+            text-decoration: none;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 1000;
         }
 
         /* GALERIA (ESCRITORIO) */
@@ -44,51 +58,50 @@
            RESPONSIVE MÓVIL (ESTÁNDAR LIMPIO)
            ========================================== */
         @media screen and (max-width: 768px) {
-    html, body {
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-        height: auto !important;
-        width: 100% !important;
-    }
+            html, body {
+                overflow-x: hidden !important;
+                overflow-y: auto !important;
+                height: auto !important;
+                width: 100% !important;
+            }
 
-    .header {
-        padding: 20px 15px !important;
-    }
+            .header {
+                padding: 20px 15px !important;
+            }
 
-    .titulo {
-        font-size: 10px !important;
-        letter-spacing: 2px !important;
-        padding-right: 60px !important;
-    }
+            .titulo {
+                font-size: 10px !important;
+                letter-spacing: 2px !important;
+            }
 
-    .btn-volver {
-        position: fixed !important;
-        top: auto !important;
-        bottom: 20px !important;
-        right: 15px !important;
-        z-index: 3000 !important;
-        background-color: #FBF9EF !important;
-        padding: 6px 10px !important;
-        border-radius: 3px !important;
-        border: 1px solid #d8d8d8 !important;
-    }
+            .btn-volver {
+                position: fixed !important;
+                top: auto !important;
+                bottom: 20px !important;
+                right: 15px !important;
+                z-index: 3000 !important;
+                background-color: #FBF9EF !important;
+                padding: 6px 10px !important;
+                border-radius: 3px !important;
+                border: 1px solid #d8d8d8 !important;
+            }
 
-    .galeria-proyecto {
-        column-count: 1 !important;
-        padding: 15px 0px !important;
-    }
+            .galeria-proyecto {
+                column-count: 1 !important;
+                padding: 15px 0px !important;
+            }
 
-    .galeria-proyecto img {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        margin-bottom: 10px !important;
-    }
+            .galeria-proyecto img {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                margin-bottom: 10px !important;
+            }
 
-    footer {
-        padding: 30px 15px 20px 15px !important;
-    }
-}
+            footer {
+                padding: 30px 15px 20px 15px !important;
+            }
+        }
     </style>
 </head>
 
