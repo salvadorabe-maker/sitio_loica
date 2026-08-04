@@ -44,135 +44,51 @@
            RESPONSIVE MÓVIL (ESTÁNDAR LIMPIO)
            ========================================== */
         @media screen and (max-width: 768px) {
-            html, body {
-                overflow-x: hidden !important;
-                overflow-y: auto !important;
-                height: auto !important;
-                width: 100% !important;
-            }
+    html, body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        height: auto !important;
+        width: 100% !important;
+    }
 
-            /* Evita que el título largo choque con el botón flotante */
-            .header {
-                padding: 20px 90px 20px 15px !important;
-                box-sizing: border-box !important;
-            }
+    .header {
+        padding: 20px 15px !important;
+    }
 
-            /* Botón volver fijo al hacer scroll */
-            .btn-volver {
-                position: fixed !important;
-                top: 16px !important;
-                right: 15px !important;
-                z-index: 3000 !important;
-                background-color: #FBF9EF !important;
-                padding: 4px 6px !important;
-                border-radius: 3px !important;
-            }
+    .titulo {
+        font-size: 10px !important;
+        letter-spacing: 2px !important;
+        padding-right: 60px !important;
+    }
 
-            /* Fuerza una sola columna vertical */
-            .galeria-proyecto {
-                column-count: 1 !important; 
-                column-gap: 0 !important;
-                padding: 15px 0px !important; /* Fotos de borde a borde del celular */
-                display: block !important;
-                width: 100% !important;
-            }
+    .btn-volver {
+        position: fixed !important;
+        top: auto !important;
+        bottom: 20px !important;
+        right: 15px !important;
+        z-index: 3000 !important;
+        background-color: #FBF9EF !important;
+        padding: 6px 10px !important;
+        border-radius: 3px !important;
+        border: 1px solid #d8d8d8 !important;
+    }
 
-            /* Imágenes adaptadas al ancho real sin deformarse */
-            .galeria-proyecto img {
-                width: 100% !important;
-                max-width: 100% !important;
-                height: auto !important;
-                margin-bottom: 12px !important;
-                display: block !important;
-            }
+    .galeria-proyecto {
+        column-count: 1 !important;
+        padding: 15px 0px !important;
+    }
 
-            /* Ajuste del footer independiente sin alterar su texto */
-            footer {
-                display: block !important;
-                width: 100% !important;
-                padding: 40px 15px 20px 15px !important;
-                box-sizing: border-box !important;
-            }
-        }
+    .galeria-proyecto img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin-bottom: 10px !important;
+    }
 
-        /* BOTÓN VOLVER */
-        .btn-volver {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 10px;
-            font-weight: 700;
-            text-decoration: none;
-            color: #000000;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            z-index: 1000;
-        }
-
-       /* ==========================================
-           RESPONSIVE MÓVIL (ESTÁNDAR LIMPIO)
-           ========================================== */
-        @media screen and (max-width: 768px) {
-            html, body {
-                overflow-x: hidden !important;
-                overflow-y: auto !important;
-                height: auto !important;
-                width: 100% !important;
-            }
-
-            /* Contenedor del encabezado */
-            .header {
-                padding: 20px 15px !important;
-                box-sizing: border-box !important;
-                position: relative !important;
-            }
-
-            /* RESTRICCIÓN PARA EL TÍTULO: EVITA QUE CHOQUE CON VOLVER */
-            .titulo {
-                max-width: 75% !important;       /* Ocupa máximo el 75% del ancho del celular */
-                line-height: 1.4 !important;      /* Le da aire entre líneas si se divide en dos */
-                font-size: 11px !important;       /* Achica un pelo la letra para que calce mejor */
-                display: block !important;
-            }
-
-            /* Botón volver fijo al hacer scroll */
-            .btn-volver {
-                position: fixed !important;
-                top: 16px !important;
-                right: 15px !important;
-                z-index: 3000 !important;
-                background-color: #FBF9EF !important;
-                padding: 4px 6px !important;
-                border-radius: 3px !important;
-            }
-
-            /* Fuerza una sola columna vertical */
-            .galeria-proyecto {
-                column-count: 1 !important; 
-                column-gap: 0 !important;
-                padding: 15px 0px !important;
-                display: block !important;
-                width: 100% !important;
-            }
-
-            /* Imágenes adaptadas al ancho real */
-            .galeria-proyecto img {
-                width: 100% !important;
-                max-width: 100% !important;
-                height: auto !important;
-                margin-bottom: 12px !important;
-                display: block !important;
-            }
-
-            /* Ajuste del footer */
-            footer {
-                display: block !important;
-                width: 100% !important;
-                padding: 40px 15px 20px 15px !important;
-                box-sizing: border-box !important;
-            }
-        
-        }
+    footer {
+        padding: 30px 15px 20px 15px !important;
+    }
+}
     </style>
 </head>
 
@@ -181,7 +97,7 @@
     <div class="header">
         <a href="index.html" class="btn-volver">[ Volver ]</a>
         <div class="titulo">
-            PROYECTO PARQUE LAS HERAS | FREIRINA | MI PARQUE
+            PROYECTO PARQUE LAS HERAS | FREIRINA | ATACAMA | MI PARQUE | 2021
         </div>
     </div>
 

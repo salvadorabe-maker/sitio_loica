@@ -48,45 +48,52 @@
    /* ==========================================
            RESPONSIVE MÓVIL (UNA COLUMNA A ANCHO TOTAL)
            ========================================== */
-        @media screen and (max-width: 768px) {
-            html, body {
-                overflow-x: hidden !important;
-                overflow-y: auto !important;
-                height: auto !important;
-                width: 100% !important;
-            }
+       @media screen and (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        height: auto !important;
+        width: 100% !important;
+    }
 
-            .header {
-                padding: 20px 15px !important;
-            }
+    .header {
+        padding: 20px 15px !important;
+    }
 
-            /* RESTRECCIÓN DEL BOTÓN VOLVER: FIJO AL HACER SCROLL */
-            .btn-volver {
-                position: fixed !important; /* Cambiado a fixed para bloquearlo en pantalla */
-                top: 20px !important;
-                right: 15px !important;
-                z-index: 3000 !important; /* Se asegura de flotar por encima de todas las imágenes */
-                background-color: #FBF9EF !important; /* Opcional: le da un fondo sólido si tapa las fotos */
-                padding: 4px 8px !important;
-                border-radius: 3px !important;
-            }
+    .titulo {
+        font-size: 10px !important;
+        letter-spacing: 2px !important;
+        padding-right: 60px !important;
+    }
 
-            .galeria-proyecto {
-                column-count: 1 !important;
-                padding: 15px 0px !important;
-            }
+    .btn-volver {
+        position: fixed !important;
+        top: auto !important;
+        bottom: 20px !important;
+        right: 15px !important;
+        z-index: 3000 !important;
+        background-color: #FBF9EF !important;
+        padding: 6px 10px !important;
+        border-radius: 3px !important;
+        border: 1px solid #d8d8d8 !important;
+    }
 
-            .galeria-proyecto img {
-                width: 100% !important;
-                max-width: 100% !important;
-                height: auto !important;
-                margin-bottom: 10px !important;
-            }
+    .galeria-proyecto {
+        column-count: 1 !important;
+        padding: 15px 0px !important;
+    }
 
-            footer {
-                padding: 30px 15px 20px 15px !important;
-            }
-        }
+    .galeria-proyecto img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin-bottom: 10px !important;
+    }
+
+    footer {
+        padding: 30px 15px 20px 15px !important;
+    }
+}
         /* BOTÓN VOLVER */
 
 .btn-volver {
@@ -113,7 +120,7 @@
         <a href="index.html" class="btn-volver">[ Volver ]</a>
 
     <div class="titulo">
-        PROYECTO AGUAS CLARAS | CACHAGUA
+        PROYECTO AGUAS CLARAS | CACHAGUA | 2024
     </div>
 
 </div>

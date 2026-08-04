@@ -46,85 +46,52 @@
    /* ==========================================
            RESPONSIVE MÓVIL (AJUSTE CURACAVÍ + FOOTER)
            ========================================== */
-        @media screen and (max-width: 768px) {
-            html, body {
-                overflow-x: hidden !important;
-                overflow-y: auto !important;
-                height: auto !important;
-                width: 100% !important;
-            }
+      @media screen and (max-width: 768px) {
+    html, body {
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        height: auto !important;
+        width: 100% !important;
+    }
 
-            /* Deja espacio a la derecha para que el título no choque con el botón fijo */
-            .header {
-                padding: 20px 90px 20px 15px !important; 
-                box-sizing: border-box !important;
-            }
+    .header {
+        padding: 20px 15px !important;
+    }
 
-            /* Botón volver flotando limpio */
-            .btn-volver {
-                position: fixed !important;
-                top: 16px !important;
-                right: 15px !important;
-                z-index: 3000 !important;
-                background-color: #FBF9EF !important;
-                padding: 4px 6px !important;
-                border-radius: 3px !important;
-            }
+    .titulo {
+        font-size: 10px !important;
+        letter-spacing: 2px !important;
+        padding-right: 60px !important;
+    }
 
-            /* DESTRUCTOR DE COLUMNAS PARA LA GALERÍA */
-            .galeria-proyecto, 
-            [class*="galeria"], 
-            [class*="photo-column"] {
-                display: block !important;
-                column-count: 1 !important;
-                grid-template-columns: none !important;
-                padding: 15px 0px !important;
-                width: 100% !important;
-            }
+    .btn-volver {
+        position: fixed !important;
+        top: auto !important;
+        bottom: 20px !important;
+        right: 15px !important;
+        z-index: 3000 !important;
+        background-color: #FBF9EF !important;
+        padding: 6px 10px !important;
+        border-radius: 3px !important;
+        border: 1px solid #d8d8d8 !important;
+    }
 
-            /* FUERZA ANCHO TOTAL EN ELEMENTOS INTERNOS EXCLUSIVOS DE LA GALERÍA */
-            .galeria-proyecto *, 
-            [class*="galeria"] *, 
-            [class*="photo-column"] * {
-                display: block !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: 100% !important;
-                height: auto !important;
-                margin-left: 0 !important;
-                margin-right: 0 !important;
-                padding: 0 !important;
-            }
+    .galeria-proyecto {
+        column-count: 1 !important;
+        padding: 15px 0px !important;
+    }
 
-            /* SEPARACIÓN VERTICAL LIMPIA ENTRE FOTOS */
-            .galeria-proyecto img, 
-            [class*="galeria"] img, 
-            [class*="photo-column"] img {
-                width: 100% !important;
-                max-width: 100% !important;
-                height: auto !important;
-                margin-bottom: 12px !important;
-                display: block !important;
-            }
+    .galeria-proyecto img {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        margin-bottom: 10px !important;
+    }
 
-            /* PROTECCIÓN Y VISIBILIDAD DEL FOOTER */
-            footer, .footer {
-                display: block !important;
-                clear: both !important; /* Rompe cualquier float previo */
-                width: 100% !important;
-                height: auto !important;
-                position: relative !important;
-                padding: 40px 15px 30px 15px !important; /* Le da el aire correcto abajo del todo */
-                box-sizing: border-box !important;
-                background-color: #FBF9EF !important;
-            }
-
-            footer *, .footer * {
-                display: inline-block !important; /* Evita que los textos del footer se rompan en bloques raros */
-                width: auto !important;
-                max-width: 100% !important;
-            }
-        }
+    footer {
+        padding: 30px 15px 20px 15px !important;
+    }
+}
         /* BOTÓN VOLVER */
 
 .btn-volver {
@@ -151,7 +118,7 @@
         <a href="index.html" class="btn-volver">[ Volver ]</a>
 
     <div class="titulo">
-        PROYECTO PARCELA CURACAVI | REGIÓN METROPOLITANA
+        PROYECTO PARCELA CURACAVI | REGIÓN METROPOLITANA | 2023
     </div>
 
 </div>
