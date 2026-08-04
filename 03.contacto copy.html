@@ -10,8 +10,8 @@
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow-x: hidden; /* Evita desborde lateral */
-            overflow-y: hidden; /* Bloquea el scroll vertical SOLO en PC */
+            overflow-x: hidden;
+            overflow-y: hidden;
             background-color: #FBF9EF;
             font-family: 'Helvetica', sans-serif;
         }
@@ -27,7 +27,7 @@
             color: #000000;
             text-transform: uppercase;
             letter-spacing: 2px;
-            z-index: 3000; /* Prioridad alta para evitar bloqueos por capas transparentes */
+            z-index: 3000;
         }
 
         /* CONTENEDOR PRINCIPAL (PC) */
@@ -37,7 +37,7 @@
             padding: 30px 25px;
             box-sizing: border-box;
             display: flex;
-            gap: 5rem; /* Espacio limpio entre columnas */
+            gap: 5rem;
             align-items: flex-start;
         }
 
@@ -52,18 +52,18 @@
             margin-bottom: 40px;
         }
 
-        .logo-wrap img {
-            height: 60px;
-            width: auto;
-            display: block;
-        }
+     .logo-wrap img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
 
        /* CARRUSEL DE COLABORADORES (PC) - CORREGIDO */
         .colaboradores-section {
             position: absolute;
-            bottom: 60px; /* Lo fija abajo en PC alineado con la columna de texto */
+            bottom: 60px;
             left: 25px;
-            width: 320px; /* Forzamos que mida el mismo ancho que la columna de texto */
+            width: 320px;
             box-sizing: border-box;
         }
 
@@ -85,7 +85,6 @@
             align-items: center;
         }
 
-        /* Difuminado sutil a los costados */
         .logos-slider::before,
         .logos-slider::after {
             content: "";
@@ -131,41 +130,41 @@
         }
 
         /* COLUMNA DERECHA (PC) */
-        .photo-column {
-            flex-shrink: 0;
-            margin-top: 130px;
-        }
+       .photo-column {
+    flex-shrink: 0;
+    margin-top: 100px;
+}
 
         .photo-column img {
-            width: 300px;
-            aspect-ratio: 2/3;
-            object-fit: cover;
-            display: block;
-        }
+    width: 240px;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    display: block;
+}
 
        /* FOOTER (PC) */
-.footer-fixed {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    border-top: 1px solid #000000;
-    padding: 10px 25px 15px 25px;
-    box-sizing: border-box;
-    background-color: #FBF9EF;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .footer-fixed {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-top: 1px solid #000000;
+            padding: 10px 25px 15px 25px;
+            box-sizing: border-box;
+            background-color: #FBF9EF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.footer-fixed p {
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #646464;
-    margin: 0;
-}
+        .footer-fixed p {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #646464;
+            margin: 0;
+        }
 
       /* ==========================================
             RESPONSIVE MÓVIL
@@ -173,7 +172,7 @@
         @media screen and (max-width: 768px) {
             html, body {
                 overflow-x: hidden !important;
-                overflow-y: scroll !important; /* Fuerza la aparición de la barra de scroll en el celular */
+                overflow-y: scroll !important;
                 height: auto !important;
                 width: 100% !important;
             }
@@ -187,10 +186,10 @@
 
             .main-container {
                 display: flex !important;
-                flex-direction: column !important; /* Apila en vertical */
+                flex-direction: column !important;
                 height: auto !important;
                 width: 100% !important;
-                padding: 60px 20px 160px 20px !important; /* Colchón para pasar el footer */
+                padding: 60px 20px 160px 20px !important;
                 gap: 40px !important;
                 box-sizing: border-box !important;
             }
@@ -217,16 +216,16 @@
 
             .colaboradores-section {
                 display: block !important;
-                position: relative !important; /* Rompe el absoluto de escritorio */
+                position: relative !important;
                 top: auto !important;
                 bottom: auto !important;
                 left: auto !important;
                 width: 100% !important;
-                height: auto !important; /* Evita que colapse a 0 */
-                min-height: 100px !important; /* Le asegura un espacio físico real */
-                margin-top: 40px !important; /* Margen numérico fijo en vez de auto */
+                height: auto !important;
+                min-height: 100px !important;
+                margin-top: 40px !important;
                 margin-bottom: 40px !important;
-                order: 3 !important; /* Va abajo de la foto */
+                order: 3 !important;
                 visibility: visible !important;
                 opacity: 1 !important;
             }
@@ -270,44 +269,53 @@
                 </a>
             </div>
 
-            <p style="margin: 0 0 30px 0; font-size: 11px; color: #888; letter-spacing: 1px;">
-                Para proyectos, colaboraciones o consultas
+            <p style="margin: 0 0 30px 0; font-size: 11px; color: #585858; letter-spacing: 1px;">
+                Para proyectos, colaboraciones o consultas :
             </p>
 
-            <h1 style="margin: 0 0 4px 0; font-size: 12px; font-weight: 700; color: #000; text-transform: uppercase; letter-spacing: 1px;">
+            <h1 style="margin: 0 0 4px 0; font-size: 12px; font-weight: 600; color: #1a1a1a; text-transform: uppercase; letter-spacing: 0.5px;">
                 Alfonso Abé Castro
             </h1>
-            <p style="margin: 0 0 30px 0; font-size: 11px; color: #888; letter-spacing: 1px;">
+            <p style="margin: 0 0 30px 0; font-size: 11px; color: #585858; letter-spacing: 1px;">
                 Arquitecto y Paisajista
             </p>
 
-            <div style="display: flex; flex-direction: column; gap: 15px; font-size: 12px;">
+          <div style="display: flex; flex-direction: column; gap: 15px; font-size: 12px;">
+    <div>
+        <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #585858;">Dirección</p>
+
+        <p style="margin: 3px 0 0 0; color: #1a1a1a; letter-spacing: 0.5px;">
+            Málaga 888, Las Condes, Santiago, Chile
+        </p>
+
+        <a href="https://www.google.com/maps?q=-33.422340,-70.583775"
+           target="_blank"
+           style="display: inline-block; margin-top: 4px; font-size: 10px; color: #9b9b9b; text-decoration: none; letter-spacing: 1px;">
+            link a google maps
+        </a>
+    </div>
+
                 <div>
-                    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #aaa;">Dirección</p>
-                    <p style="margin: 3px 0 0 0; color: #000; letter-spacing: 0.5px;">Málaga 888, Las Condes, Santiago, Chile</p>
+                    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #585858;">Teléfono</p>
+                    <p style="margin: 3px 0 0 0; color: #1a1a1a; letter-spacing: 0.5px;">+56 9 99491816</p>
                 </div>
 
                 <div>
-                    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #aaa;">Teléfono</p>
-                    <p style="margin: 3px 0 0 0; color: #000; letter-spacing: 0.5px;">+56 9 99491816</p>
-                </div>
-
-                <div>
-                    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #aaa;">Email</p>
+                    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #585858;">Email</p>
                     <p style="margin: 3px 0 0 0;">
-                        <a href="mailto:alfonsoabe88@gmail.com" style="color: #000; text-decoration: none; border-bottom: 1px solid #000; letter-spacing: 0.5px;">alfonsoabe88@gmail.com</a>
+                        <a href="mailto:alfonsoabe88@gmail.com" style="color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; letter-spacing: 0.5px;">alfonsoabe88@gmail.com</a>
                     </p>
                 </div>
 
                 <div>
-                    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #aaa;">Redes</p>
-                    <p style="margin: 4px 0 0 0;">
-                        <a href="https://www.instagram.com/loica_estudio/" target="_blank" style="color: #000; text-decoration: none; border-bottom: 1px solid #000; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: 1px;">Instagram ↗</a>
-                    </p>
-                    <p style="margin: 6px 0 0 0;">
-                        <a href="https://www.behance.net/alfonsoab" target="_blank" style="color: #000; text-decoration: none; border-bottom: 1px solid #000; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: 1px;">Behance ↗</a>
-                    </p>
-                </div>
+    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #585858;">Redes</p>
+    <p style="margin: 4px 0 0 0;">
+        <a href="https://www.instagram.com/loica_estudio/" target="_blank" style="color: #000; text-decoration: none; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: 1px;">Instagram ↗</a>
+    </p>
+    <p style="margin: 6px 0 0 0;">
+        <a href="https://www.behance.net/alfonsoab" target="_blank" style="color: #000; text-decoration: none; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: 1px;">Behance ↗</a>
+    </p>
+</div>
             </div>
         </div>
 
@@ -325,7 +333,7 @@
                     <div class="logo-slide"><img src="images/COLABORACIONES/Monolitologo01.png" alt="Logo 3"></div>
                     <div class="logo-slide"><img src="images/COLABORACIONES/LP-LOGO+2 copia.png" alt="Logo 4" style="transform: scale(1.75);"></div>
                     <div class="logo-slide"><img src="images/COLABORACIONES/logo-mi-parque-2020.png" alt="Logo 5"></div>
-                    
+
                     <div class="logo-slide"><img src="images/COLABORACIONES/Captura de pantalla 2026-05-29 021336.png" alt="Logo 1"></div>
                     <div class="logo-slide"><img src="images/COLABORACIONES/logo-hotizontal-airworks-2-1024x319.png" alt="Logo 2"></div>
                     <div class="logo-slide"><img src="images/COLABORACIONES/Monolitologo01.png" alt="Logo 3"></div>
