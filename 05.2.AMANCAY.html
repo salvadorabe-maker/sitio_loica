@@ -9,105 +9,127 @@
 
     <style>
 
-        body {
-            margin: 0;
-            background-color: #FBF9EF;
-            font-family: Helvetica, Arial, sans-serif;
-        }
+    /* ================================
+       TRANSICIÓN AL CARGAR LA PÁGINA
+       ================================ */
 
-        /* HEADER */
+    body {
+        margin: 0;
+        background-color: #FBF9EF;
+        font-family: Helvetica, Arial, sans-serif;
 
-        .header {
-            padding: 25px;
-            border-bottom: 1px solid #d8d8d8;
-        }
-
-        .titulo {
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #444;
-        }
-
-        /* GALERIA */
-
-        .galeria-proyecto {
-            column-count: 2;
-            column-gap: 14px;
-            padding: 25px;
-        }
-
-        .galeria-proyecto img {
-            width: 100%;
-            margin-bottom: 14px;
-            display: block;
-        }
-
-       /* ==========================================
-           RESPONSIVE MÓVIL (UNA COLUMNA A ANCHO TOTAL)
-           ========================================== */
-      @media screen and (max-width: 768px) {
-    html, body {
-        overflow-x: hidden !important;
-        overflow-y: auto !important;
-        height: auto !important;
-        width: 100% !important;
+        animation: aparecer 0.3s ease-out both;
     }
 
+    @keyframes aparecer {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+
+    /* HEADER */
+
     .header {
-        padding: 20px 15px !important;
+        padding: 25px;
+        border-bottom: 1px solid #d8d8d8;
     }
 
     .titulo {
-        font-size: 10px !important;
-        letter-spacing: 2px !important;
-        padding-right: 60px !important;
+        font-size: 12px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: #444;
     }
 
-    .btn-volver {
-        position: fixed !important;
-        top: auto !important;
-        bottom: 20px !important;
-        right: 15px !important;
-        z-index: 3000 !important;
-        background-color: #FBF9EF !important;
-        padding: 6px 10px !important;
-        border-radius: 3px !important;
-        border: 1px solid #d8d8d8 !important;
-    }
+
+    /* GALERIA */
 
     .galeria-proyecto {
-        column-count: 1 !important;
-        padding: 15px 0px !important;
+        column-count: 2;
+        column-gap: 14px;
+        padding: 25px;
     }
 
     .galeria-proyecto img {
-        width: 100% !important;
-        max-width: 100% !important;
-        height: auto !important;
-        margin-bottom: 10px !important;
+        width: 100%;
+        margin-bottom: 14px;
+        display: block;
     }
 
-    footer {
-        padding: 30px 15px 20px 15px !important;
+
+    /* CELULAR */
+
+    @media screen and (max-width: 768px) {
+
+        html,
+        body {
+            overflow-x: hidden !important;
+            overflow-y: auto !important;
+            height: auto !important;
+            width: 100% !important;
+        }
+
+        .header {
+            padding: 20px 15px !important;
+        }
+
+        .titulo {
+            font-size: 10px !important;
+            letter-spacing: 2px !important;
+            padding-right: 60px !important;
+        }
+
+        .btn-volver {
+            position: fixed !important;
+            top: auto !important;
+            bottom: 20px !important;
+            right: 15px !important;
+            z-index: 3000 !important;
+            background-color: #FBF9EF !important;
+            padding: 6px 10px !important;
+            border-radius: 3px !important;
+            border: 1px solid #d8d8d8 !important;
+        }
+
+        .galeria-proyecto {
+            column-count: 1 !important;
+            padding: 15px 0px !important;
+        }
+
+        .galeria-proyecto img {
+            width: 100% !important;
+            max-width: 100% !important;
+            height: auto !important;
+            margin-bottom: 10px !important;
+        }
+
+        footer {
+            padding: 30px 15px 20px 15px !important;
+        }
     }
-}
-        /* BOTÓN VOLVER */
 
-.btn-volver {
-    position: absolute;
-    top: 20px;
-    right: 25px;
-    font-size: 10px;
-    font-weight: 700;
-    text-decoration: none;
-    color: #000000;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    z-index: 1000;
-}
 
-    </style>
+    /* BOTÓN VOLVER */
+
+    .btn-volver {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 10px;
+        font-weight: 700;
+        text-decoration: none;
+        color: #000000;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        z-index: 1000;
+    }
+
+</style>
 </head>
 
 <body>
