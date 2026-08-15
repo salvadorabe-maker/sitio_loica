@@ -1,11 +1,45 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+   <!DOCTYPE html>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOICA ESTUDIO</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
+
     <style>
+
+    body {
+        animation: entrada  2.5s ease-out both;
+    }
+
+    @keyframes entrada {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .contenedor-grilla {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        padding: 30px;
+        margin-top: 0px;
+    }
+
+    .item-proyecto {
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        overflow: hidden;
+        background-color: #f9f9f9;
+    }
+
+    /* ...y sigue todo tu CSS que ya tenías... */
     .contenedor-grilla {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
