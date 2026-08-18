@@ -43,12 +43,11 @@
             width: 40%;
             min-width: 300px;
             height: 100%;
-            overflow-y: auto; /* Permite scroll interno si el texto excede la pantalla */
+            overflow-y: auto;
             margin-top: 40px;
-            padding-right: 15px; /* Evita que el texto choque con la barra de scroll */
+            padding-right: 15px;
         }
 
-        /* Oculta la barra de scroll en navegadores modernos para mantener la estética limpia */
         .text-column::-webkit-scrollbar {
             width: 0px;
         }
@@ -84,6 +83,10 @@
             height: 100%;
             object-fit: cover;
             display: block;
+        }
+
+        .mobile-banner-img {
+            display: none;
         }
 
         footer {
@@ -130,6 +133,13 @@
                 grid-template-columns: repeat(2, 1fr) !important;
                 gap: 10px !important;
             }
+            .mobile-banner-img {
+                display: block !important;
+                width: 100% !important;
+                aspect-ratio: 16 / 9 !important;
+                object-fit: cover !important;
+                margin: 20px 0 !important;
+            }
             footer {
                 padding: 15px 20px !important;
                 flex-direction: column !important;
@@ -164,10 +174,14 @@
                 Jardines | Paisajismo | Arquitectura Exterior | Diseño y Ejecución 
             </p>
 
+            <img src="images/Z_IMGCONTACTO/DSC08510 copia.webp" alt="Proyecto Loica Estudio" class="mobile-banner-img">
+
             <!-- DESCRIPCIÓN -->
            <p style="margin: 6px 0 35px 0; font-size: 11px; line-height: 1.7; color: #000; text-align: justify; hyphens: none;">
                 Diseñamos y ejecutamos proyectos de exterior de diversas escalas y tamaños, integrando paisaje, arquitectura y funcionalidad. Desarrollamos propuestas que van desde jardines residenciales hasta planes maestros para condominios, parques y espacios públicos. Nos interesa especialmente trabajar con materiales locales y vegetación nativa, buscando proyectos que dialoguen de manera sensible con su entorno.
             </p>
+
+            <img src="images/Z_IMGCONTACTO/000021 copia.webp" alt="Proyecto Loica Estudio" class="mobile-banner-img">
 
             <!-- ITEMS -->
             <div class="items-list">
