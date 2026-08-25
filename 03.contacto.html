@@ -1,13 +1,30 @@
 <!DOCTYPE HTML>
+
 <html lang="es">
+
 <head>
+
     <meta charset="utf-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- GOOGLE ANALYTICS -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZV05TJ033Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-ZV05TJ033Q');
+    </script>
+
     <title>Contacto - Loica Estudio</title>
-    
+
     <!-- Meta descripción y canónica -->
     <meta name="description" content="Contacta a Loica Estudio y a Alfonso Abé Castro. Arquitectura, paisajismo, diseño de jardines y ejecución de obra en Santiago y Chile.">
+
     <link rel="canonical" href="https://loicaestudio.cl/contacto.html">
+
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- Schema estructurado para la página de contacto -->
@@ -37,7 +54,8 @@
     </script>
 
     <style>
-       html, body {
+
+        html, body {
             margin: 0;
             padding: 0;
             height: 100%;
@@ -62,43 +80,40 @@
             z-index: 3000;
         }
 
-      /* LOGO (fijo, independiente del contenido centrado) */
-.logo-wrap {
-    position: absolute;
-    top: 13px;
-    left: 30px;
-}
+        /* LOGO */
+        .logo-wrap {
+            position: absolute;
+            top: 13px;
+            left: 30px;
+        }
 
-.logo-wrap img {
-    height: 50px;
-    width: auto;
-    display: block;
-}
+        .logo-wrap img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
 
-    
-       /* CONTENEDOR PRINCIPAL (PC) */
-.main-container {
-    height: 100vh;
-    width: 100vw;
-    padding: 30px 25px;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    gap: 10rem;              /* antes: 8rem */
-    align-items: flex-start;
-}
+        /* CONTENEDOR PRINCIPAL (PC) */
+        .main-container {
+            height: 100vh;
+            width: 100vw;
+            padding: 30px 25px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            gap: 10rem;
+            align-items: flex-start;
+        }
 
-   /* COLUMNA IZQUIERDA (PC) */
-.info-column {
-    width: 320px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px;       /* baja la columna para alinearla con la foto */
-}
+        /* COLUMNA IZQUIERDA (PC) */
+        .info-column {
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            margin-top: 100px;
+        }
 
-      
-
-       /* CARRUSEL DE COLABORADORES (PC) - CORREGIDO */
+        /* CARRUSEL DE COLABORADORES (PC) */
         .colaboradores-section {
             position: absolute;
             bottom: 60px;
@@ -134,8 +149,16 @@
             z-index: 2;
             pointer-events: none;
         }
-        .logos-slider::before { left: 0; background: linear-gradient(to right, #FBF9EF 0%, transparent 100%); }
-        .logos-slider::after { right: 0; background: linear-gradient(to left, #FBF9EF 0%, transparent 100%); }
+
+        .logos-slider::before {
+            left: 0;
+            background: linear-gradient(to right, #FBF9EF 0%, transparent 100%);
+        }
+
+        .logos-slider::after {
+            right: 0;
+            background: linear-gradient(to left, #FBF9EF 0%, transparent 100%);
+        }
 
         .logos-track {
             display: flex;
@@ -165,24 +188,29 @@
         }
 
         @keyframes scrollInfinito {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-240px * 5)); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-240px * 5));
+            }
         }
 
         /* COLUMNA DERECHA (PC) */
-       .photo-column {
-    flex-shrink: 0;
-    margin-top: 100px;
-}
+        .photo-column {
+            flex-shrink: 0;
+            margin-top: 100px;
+        }
 
         .photo-column img {
-    width: 240px;
-    aspect-ratio: 2/3;
-    object-fit: cover;
-    display: block;
-}
+            width: 240px;
+            aspect-ratio: 2/3;
+            object-fit: cover;
+            display: block;
+        }
 
-       /* FOOTER (PC) */
+        /* FOOTER (PC) */
         .footer-fixed {
             position: fixed;
             bottom: 0;
@@ -206,10 +234,12 @@
             margin: 0;
         }
 
-      /* ==========================================
-            RESPONSIVE MÓVIL
-            ========================================== */
+        /* ==========================================
+           RESPONSIVE MÓVIL
+           ========================================== */
+
         @media screen and (max-width: 768px) {
+
             html, body {
                 overflow-x: hidden !important;
                 overflow-y: scroll !important;
@@ -299,9 +329,13 @@
                 font-size: 8px !important;
                 text-align: center !important;
             }
+
         }
+
     </style>
+
 </head>
+
 <body>
 
     <a href="02.Proyectos.html" class="btn-volver">[ Volver ]</a>
@@ -317,45 +351,78 @@
         <div class="info-column">
 
             <p style="margin: 0 0 30px 0; font-size: 11px; color: #585858; letter-spacing: 1px;">
-                Para proyectos, colaboraciones o preguntas 
+                Para proyectos, colaboraciones o preguntas
             </p>
 
             <h1 style="margin: 0 0 4px 0; font-size: 12px; font-weight: 600; color: #1a1a1a; text-transform: uppercase; letter-spacing: 0.5px;">
                 Alfonso Abé Castro
             </h1>
+
             <p style="margin: 0 0 30px 0; font-size: 11px; color: #585858; letter-spacing: 1px;">
                 Arquitecto y Paisajista
             </p>
 
             <div style="display: flex; flex-direction: column; gap: 15px; font-size: 12px;">
-                <div>
-                    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #585858;">Dirección</p>
-                    <p style="margin: 3px 0 0 0; color: #1a1a1a; letter-spacing: 0.5px;">Málaga 888, Las Condes, Santiago, Chile</p>
-                    
-                </div>
 
                 <div>
-                    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #585858;">Teléfono</p>
-                    <p style="margin: 3px 0 0 0; color: #1a1a1a; letter-spacing: 0.5px;">+56 9 99491816</p>
-                </div>
+                    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #585858;">
+                        Dirección
+                    </p>
 
-                <div>
-                    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #585858;">Email</p>
-                    <p style="margin: 3px 0 0 0;">
-                        <a href="mailto:alfonsoabe88@gmail.com" style="color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; letter-spacing: 0.5px;">alfonsoabe88@gmail.com</a>
+                    <p style="margin: 3px 0 0 0; color: #1a1a1a; letter-spacing: 0.5px;">
+                        Málaga 888, Las Condes, Santiago, Chile
                     </p>
                 </div>
 
                 <div>
-    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #585858;">Redes</p>
-    <p style="margin: 4px 0 0 0;">
-        <a href="https://www.instagram.com/loica_estudio/" target="_blank" style="color: #000; text-decoration: none; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: 1px;">Instagram ↗</a>
-    </p>
-    <p style="margin: 6px 0 0 0;">
-        <a href="https://www.behance.net/alfonsoab" target="_blank" style="color: #000; text-decoration: none; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: 1px;">Behance ↗</a>
-    </p>
-</div>
+                    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #585858;">
+                        Teléfono
+                    </p>
+
+                    <p style="margin: 3px 0 0 0; color: #1a1a1a; letter-spacing: 0.5px;">
+                        +56 9 99491816
+                    </p>
+                </div>
+
+                <div>
+                    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #585858;">
+                        Email
+                    </p>
+
+                    <p style="margin: 3px 0 0 0;">
+                        <a href="mailto:alfonsoabe88@gmail.com"
+                           style="color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; letter-spacing: 0.5px;">
+                            alfonsoabe88@gmail.com
+                        </a>
+                    </p>
+                </div>
+
+                <div>
+
+                    <p style="margin: 0; font-size: 9px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #585858;">
+                        Redes
+                    </p>
+
+                    <p style="margin: 4px 0 0 0;">
+                        <a href="https://www.instagram.com/loica_estudio/"
+                           target="_blank"
+                           style="color: #000; text-decoration: none; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: 1px;">
+                            Instagram ↗
+                        </a>
+                    </p>
+
+                    <p style="margin: 6px 0 0 0;">
+                        <a href="https://www.behance.net/alfonsoab"
+                           target="_blank"
+                           style="color: #000; text-decoration: none; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: 1px;">
+                            Behance ↗
+                        </a>
+                    </p>
+
+                </div>
+
             </div>
+
         </div>
 
         <div class="photo-column">
@@ -365,86 +432,105 @@
     </div>
 
     <div class="colaboradores-section">
-        <p class="colaboradores-titulo">Instituciones y empresas que han colaborado con nosotros</p>
-        
-        <<div class="logos-slider">
-    <div class="logos-track">
 
-        <!-- Primera vuelta -->
+        <p class="colaboradores-titulo">
+            Instituciones y empresas que han colaborado con nosotros
+        </p>
 
         <div class="logos-slider">
-    <div class="logos-track">
 
-        <!-- Primera vuelta -->
-        <div class="logo-slide">
-            <a href="https://losquebrachos.cl/" target="_blank" rel="noopener noreferrer">
-                <img src="images/COLABORACIONES/Captura de pantalla 2026-05-29 021336.png" alt="Los Quebrachos">
-            </a>
-        </div>
+            <div class="logos-track">
 
-        <div class="logo-slide">
-            <a href="https://airwork.cl/" target="_blank" rel="noopener noreferrer">
-                <img src="images/COLABORACIONES/logo-hotizontal-airworks-2-1024x319.png" alt="Airwork">
-            </a>
-        </div>
+                <!-- Primera vuelta -->
 
-        <div class="logo-slide">
-            <a href="https://www.monolito.cl/" target="_blank" rel="noopener noreferrer">
-                <img src="images/COLABORACIONES/Monolitologo01.png" alt="Monolito">
-            </a>
-        </div>
+                <div class="logo-slide">
+                    <a href="https://losquebrachos.cl/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/COLABORACIONES/Captura de pantalla 2026-05-29 021336.png"
+                             alt="Los Quebrachos">
+                    </a>
+                </div>
 
-        <div class="logo-slide">
-            <a href="https://www.condominioperales.com/" target="_blank" rel="noopener noreferrer">
-                <img src="images/COLABORACIONES/LP-LOGO+2 copia.png" alt="Condominio Perales" style="transform: scale(1.75);">
-            </a>
-        </div>
+                <div class="logo-slide">
+                    <a href="https://airwork.cl/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/COLABORACIONES/logo-hotizontal-airworks-2-1024x319.png"
+                             alt="Airwork">
+                    </a>
+                </div>
 
-        <div class="logo-slide">
-            <a href="https://miparque.cl/" target="_blank" rel="noopener noreferrer">
-                <img src="images/COLABORACIONES/logo-mi-parque-2020.png" alt="Fundación Mi Parque">
-            </a>
-        </div>
+                <div class="logo-slide">
+                    <a href="https://www.monolito.cl/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/COLABORACIONES/Monolitologo01.png"
+                             alt="Monolito">
+                    </a>
+                </div>
 
-        <!-- Segunda vuelta -->
-        <div class="logo-slide">
-            <a href="https://losquebrachos.cl/" target="_blank" rel="noopener noreferrer">
-                <img src="images/COLABORACIONES/Captura de pantalla 2026-05-29 021336.png" alt="Los Quebrachos">
-            </a>
-        </div>
+                <div class="logo-slide">
+                    <a href="https://www.condominioperales.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/COLABORACIONES/LP-LOGO+2 copia.png"
+                             alt="Condominio Perales"
+                             style="transform: scale(1.75);">
+                    </a>
+                </div>
 
-        <div class="logo-slide">
-            <a href="https://airwork.cl/" target="_blank" rel="noopener noreferrer">
-                <img src="images/COLABORACIONES/logo-hotizontal-airworks-2-1024x319.png" alt="Airwork">
-            </a>
-        </div>
+                <div class="logo-slide">
+                    <a href="https://miparque.cl/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/COLABORACIONES/logo-mi-parque-2020.png"
+                             alt="Fundación Mi Parque">
+                    </a>
+                </div>
 
-        <div class="logo-slide">
-            <a href="https://www.monolito.cl/" target="_blank" rel="noopener noreferrer">
-                <img src="images/COLABORACIONES/Monolitologo01.png" alt="Monolito">
-            </a>
-        </div>
+                <!-- Segunda vuelta -->
 
-        <div class="logo-slide">
-            <a href="https://www.condominioperales.com/" target="_blank" rel="noopener noreferrer">
-                <img src="images/COLABORACIONES/LP-LOGO+2 copia.png" alt="Condominio Perales" style="transform: scale(1.75);">
-            </a>
-        </div>
+                <div class="logo-slide">
+                    <a href="https://losquebrachos.cl/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/COLABORACIONES/Captura de pantalla 2026-05-29 021336.png"
+                             alt="Los Quebrachos">
+                    </a>
+                </div>
 
-        <div class="logo-slide">
-            <a href="https://miparque.cl/" target="_blank" rel="noopener noreferrer">
-                <img src="images/COLABORACIONES/logo-mi-parque-2020.png" alt="Fundación Mi Parque">
-            </a>
+                <div class="logo-slide">
+                    <a href="https://airwork.cl/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/COLABORACIONES/logo-hotizontal-airworks-2-1024x319.png"
+                             alt="Airwork">
+                    </a>
+                </div>
+
+                <div class="logo-slide">
+                    <a href="https://www.monolito.cl/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/COLABORACIONES/Monolitologo01.png"
+                             alt="Monolito">
+                    </a>
+                </div>
+
+                <div class="logo-slide">
+                    <a href="https://www.condominioperales.com/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/COLABORACIONES/LP-LOGO+2 copia.png"
+                             alt="Condominio Perales"
+                             style="transform: scale(1.75);">
+                    </a>
+                </div>
+
+                <div class="logo-slide">
+                    <a href="https://miparque.cl/" target="_blank" rel="noopener noreferrer">
+                        <img src="images/COLABORACIONES/logo-mi-parque-2020.png"
+                             alt="Fundación Mi Parque">
+                    </a>
+                </div>
+
+            </div>
+
         </div>
 
     </div>
-</div>
-    </div>
 
-   <footer class="footer-fixed" style="display: flex; justify-content: space-between;">
-    <p>LOICA ESTUDIO ® 2026</p>
-    <p>Arquitectura y Paisajismo</p>
-</footer>
+    <footer class="footer-fixed" style="display: flex; justify-content: space-between;">
+
+        <p>LOICA ESTUDIO ® 2026</p>
+
+        <p>Arquitectura y Paisajismo</p>
+
+    </footer>
 
 </body>
+
 </html>

@@ -1,20 +1,86 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Loica Estudio - Información</title>
 
+    <meta name="description" content="Loica Estudio desarrolla proyectos de arquitectura del paisaje, diseño de jardines y espacios exteriores, integrando paisaje, arquitectura, materiales locales y vegetación.">
+
+    <link rel="canonical" href="https://loicaestudio.cl/04.información.html">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+
+    <!-- =====================================================
+         GOOGLE ANALYTICS
+    ====================================================== -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZV05TJ033Q"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-ZV05TJ033Q');
+    </script>
+
+
+    <!-- =====================================================
+         DATOS ESTRUCTURADOS
+    ====================================================== -->
+
+    <script type="application/ld+json">
+
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Loica Estudio",
+        "url": "https://loicaestudio.cl/04.información.html",
+        "founder": {
+            "@type": "Person",
+            "name": "Alfonso Abé Castro"
+        },
+        "areaServed": "Chile",
+        "description": "Loica Estudio desarrolla proyectos de arquitectura del paisaje, diseño de jardines y espacios exteriores, integrando paisaje, arquitectura, materiales locales y vegetación.",
+        "sameAs": [
+            "https://www.instagram.com/loica_estudio/",
+            "https://www.behance.net/alfonsoab"
+        ]
+    }
+
+    </script>
+
+
     <style>
-        html, body {
+
+        /* =====================================================
+           BASE
+        ====================================================== */
+
+        html,
+        body {
             margin: 0;
             padding: 0;
             height: 100%;
             background-color: #FBF9EF;
-            font-family: 'Helvetica', sans-serif;
+            font-family: Helvetica, Arial, sans-serif;
             color: #000000;
             overflow: hidden;
         }
+
+
+        /* =====================================================
+           CONTENEDOR PRINCIPAL
+        ====================================================== */
 
         .info-wrapper {
             display: flex;
@@ -25,6 +91,11 @@
             align-items: flex-start;
             position: relative;
         }
+
+
+        /* =====================================================
+           BOTÓN VOLVER
+        ====================================================== */
 
         .btn-volver {
             position: absolute;
@@ -39,6 +110,11 @@
             z-index: 20;
         }
 
+
+        /* =====================================================
+           COLUMNA DE TEXTO
+        ====================================================== */
+
         .text-column {
             width: 40%;
             min-width: 300px;
@@ -46,11 +122,26 @@
             overflow-y: auto;
             margin-top: 40px;
             padding-right: 15px;
+
+            opacity: 0;
+            transform: translateX(-30px);
+
+            animation:
+                entrarIzquierda
+                0.9s
+                cubic-bezier(0.16, 1, 0.3, 1)
+                0.2s
+                forwards;
         }
 
         .text-column::-webkit-scrollbar {
             width: 0px;
         }
+
+
+        /* =====================================================
+           LISTA DE CONTENIDOS
+        ====================================================== */
 
         .items-list {
             display: flex;
@@ -62,6 +153,11 @@
             display: flex;
             gap: 20px;
         }
+
+
+        /* =====================================================
+           GRILLA DE FOTOS
+        ====================================================== */
 
         .photo-grid {
             display: grid;
@@ -76,6 +172,9 @@
             aspect-ratio: 2 / 3;
             background-color: #eae6d8;
             overflow: hidden;
+
+            opacity: 0;
+            transform: translateY(20px);
         }
 
         .photo-item img {
@@ -85,182 +184,506 @@
             display: block;
         }
 
+
+        /* =====================================================
+           ANIMACIÓN DE FOTOS
+        ====================================================== */
+
+        .photo-item:nth-child(1) {
+            animation: entrarFoto 0.6s ease 0.8s forwards;
+        }
+
+        .photo-item:nth-child(2) {
+            animation: entrarFoto 0.6s ease 1.0s forwards;
+        }
+
+        .photo-item:nth-child(3) {
+            animation: entrarFoto 0.6s ease 1.2s forwards;
+        }
+
+        .photo-item:nth-child(4) {
+            animation: entrarFoto 0.6s ease 1.4s forwards;
+        }
+
+        .photo-item:nth-child(5) {
+            animation: entrarFoto 0.6s ease 1.6s forwards;
+        }
+
+        .photo-item:nth-child(6) {
+            animation: entrarFoto 0.6s ease 1.8s forwards;
+        }
+
+        .photo-item:nth-child(7) {
+            animation: entrarFoto 0.6s ease 2.0s forwards;
+        }
+
+        .photo-item:nth-child(8) {
+            animation: entrarFoto 0.6s ease 2.2s forwards;
+        }
+
+
+        /* =====================================================
+           IMÁGENES PARA MÓVIL
+        ====================================================== */
+
         .mobile-banner-img {
             display: none;
         }
+
+
+        /* =====================================================
+           FOOTER
+        ====================================================== */
 
         footer {
             display: flex;
             justify-content: space-between;
             align-items: center;
+
             padding: 15px 25px;
+
             background-color: #FBF9EF;
             border-top: 1px solid #000000;
+
             position: fixed;
             bottom: 0;
             width: 100%;
+
             box-sizing: border-box;
             z-index: 10;
         }
 
-      .footer-text {
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #646464;
-}
+        .footer-text {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #646464;
+        }
+
+
+        /* =====================================================
+           ANIMACIONES
+        ====================================================== */
+
+        @keyframes entrarIzquierda {
+
+            0% {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+        }
+
+        @keyframes entrarFoto {
+
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        /* =====================================================
+           MÓVIL
+        ====================================================== */
 
         @media screen and (max-width: 768px) {
-            html, body {
+
+            html,
+            body {
                 overflow: auto !important;
                 height: auto !important;
             }
+
+
             .info-wrapper {
+
                 flex-direction: column !important;
+
                 gap: 40px !important;
+
                 height: auto !important;
-                padding: 60px 20px 120px 20px !important;
+
+                padding:
+                    60px
+                    20px
+                    120px
+                    20px !important;
             }
+
+
+            /* COLUMNA DE TEXTO */
+
             .text-column {
+
                 width: 100% !important;
+
                 height: auto !important;
+
                 padding-right: 0 !important;
+
+                margin-top: 40px !important;
             }
+
+
+            /* GRILLA */
+
             .photo-grid {
+
                 width: 100% !important;
+
                 max-height: none !important;
-                grid-template-columns: repeat(2, 1fr) !important;
+
+                grid-template-columns:
+                    repeat(2, 1fr) !important;
+
                 gap: 10px !important;
+
+                margin-top: 0 !important;
             }
+
+
+            /* IMÁGENES INTERCALADAS */
+
             .mobile-banner-img {
+
                 display: block !important;
+
                 width: 100% !important;
+
                 aspect-ratio: 16 / 9 !important;
+
                 object-fit: cover !important;
+
                 margin: 20px 0 !important;
+
                 background-color: #eae6d8 !important;
             }
+
+
+            /* FOOTER */
+
             footer {
+
                 padding: 15px 20px !important;
+
                 flex-direction: column !important;
+
                 gap: 5px !important;
+
                 text-align: center !important;
+
                 align-items: center !important;
             }
+
             .footer-text {
+
                 font-size: 9px !important;
+
                 letter-spacing: 1px !important;
+
                 width: 100% !important;
             }
+
+
+            /* BOTÓN VOLVER */
+
+            .btn-volver {
+
+                position: fixed !important;
+
+                top: 15px !important;
+
+                right: 20px !important;
+
+                z-index: 3000 !important;
+            }
+
         }
 
-        /* ANIMACIONES ENTRADA */
-.text-column {
-    opacity: 0;
-    transform: translateX(-30px);
-    animation: entrarIzquierda 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
-}
-
-.photo-item {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.photo-item:nth-child(1) { animation: entrarFoto 0.6s ease 0.8s forwards; }
-.photo-item:nth-child(2) { animation: entrarFoto 0.6s ease 1.0s forwards; }
-.photo-item:nth-child(3) { animation: entrarFoto 0.6s ease 1.2s forwards; }
-.photo-item:nth-child(4) { animation: entrarFoto 0.6s ease 1.4s forwards; }
-.photo-item:nth-child(5) { animation: entrarFoto 0.6s ease 1.6s forwards; }
-.photo-item:nth-child(6) { animation: entrarFoto 0.6s ease 1.8s forwards; }
-.photo-item:nth-child(7) { animation: entrarFoto 0.6s ease 2.0s forwards; }
-.photo-item:nth-child(8) { animation: entrarFoto 0.6s ease 2.2s forwards; }
-
-@keyframes entrarIzquierda {
-    0%   { opacity: 0; transform: translateX(-30px); }
-    100% { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes entrarFoto {
-    0%   { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-        
     </style>
+
 </head>
+
+
 <body>
+
+
+    <!-- =====================================================
+         CONTENIDO PRINCIPAL
+    ====================================================== -->
 
     <section class="info-wrapper">
 
-        <a href="02.Proyectos.html" class="btn-volver">[ Volver ]</a>
 
-        <!-- COLUMNA DE TEXTO -->
+        <!-- BOTÓN VOLVER -->
+
+        <a href="02.Proyectos.html" class="btn-volver">
+            [ Volver ]
+        </a>
+
+
+        <!-- =================================================
+             COLUMNA DE TEXTO
+        ================================================== -->
+
         <div class="text-column">
 
+
             <!-- TÍTULO -->
-            <h2 style="margin: 0 0 8px 0; font-size: 16px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #000;">
+
+            <h2 style="
+                margin: 0 0 8px 0;
+                font-size: 16px;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                color: #000;
+            ">
                 Nuestro Trabajo
             </h2>
 
+
             <!-- SUBTÍTULO -->
-            <p style="margin: 0 0 25px 0; font-size: 11px; color: #8c8b8b; letter-spacing: 0.55px; text-transform: uppercase;">
+
+            <p style="
+                margin: 0 0 25px 0;
+                font-size: 11px;
+                color: #8c8b8b;
+                letter-spacing: 0.55px;
+                text-transform: uppercase;
+            ">
                 Diseño y construcción de proyectos de arquitectura del paisaje
             </p>
 
-            <img src="images/Z_IMGCONTACTO/DSC08510 copia.webp" alt="Proyecto Loica Estudio" class="mobile-banner-img">
+
+            <!-- IMAGEN MÓVIL -->
+
+            <img
+                src="images/Z_IMGCONTACTO/DSC08510 copia.webp"
+                alt="Proyecto de arquitectura del paisaje de Loica Estudio"
+                class="mobile-banner-img"
+            >
+
 
             <!-- DESCRIPCIÓN -->
-           <p style="margin: 6px 0 35px 0; font-size: 11px; line-height: 1.7; color: #000; text-align: justify; hyphens: none;">
+
+            <p style="
+                margin: 6px 0 35px 0;
+                font-size: 11px;
+                line-height: 1.7;
+                color: #000;
+                text-align: justify;
+                hyphens: none;
+            ">
                 Diseñamos y ejecutamos proyectos de exterior de diversas escalas y tamaños, integrando paisaje, arquitectura y funcionalidad. Desarrollamos propuestas que van desde jardines residenciales hasta planes maestros para condominios, parques y espacios públicos. Nos interesa especialmente trabajar con materiales locales y vegetación nativa, buscando proyectos que dialoguen de manera sensible con su entorno.
             </p>
 
-            <img src="images/Z_IMGCONTACTO/000021 copia.webp" alt="Proyecto Loica Estudio" class="mobile-banner-img" loading="lazy">
 
-            <!-- ITEMS -->
+            <!-- SEGUNDA IMAGEN MÓVIL -->
+
+            <img
+                src="images/Z_IMGCONTACTO/000021 copia.webp"
+                alt="Espacio exterior diseñado por Loica Estudio"
+                class="mobile-banner-img"
+                loading="lazy"
+            >
+
+
+            <!-- =================================================
+                 ITEMS
+            ================================================== -->
+
             <div class="items-list">
 
-                <div class="item-row">
-                    <div>
-                        <p style="margin: 0; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #8c8b8b;">Relación con el contexto y la arquitectura</p>
-                        <p style="margin: 6px 0 0 0; font-size: 11px; line-height: 1.7; color: #000; text-align: justify; hyphens: none ;">
-                            Entendemos el jardín / espacio exterior como un lugar fundamental en el habitar, en la forma en que nos relacionamos con el contexto y con el medio natural. El jardín es para nosotros un espacio de gran potencial, y nos gusta proponer espacios, actividades y dinámicas de uso. Velamos por hacer espacios integrados al lugar donde se emplazan, procurando una lectura adecuada del emplazamiento (viento, sol, luz, vistas etc…) usar materiales locales, especies nativas (dependiendo de disponibilidad). Consideramos la arquitectura como parte del contexto. Nos interesa proponer jardines con materiales y lógicas que dialoguen y potencien lo arquitectónico y construido.
-                    </div>
-                </div>
+
+                <!-- RELACIÓN CON CONTEXTO -->
 
                 <div class="item-row">
+
                     <div>
-                        <p style="margin: 0; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #8c8b8b;">Baja mantención / consumo hídrico</p>
-                        <p style="margin: 6px 0 0 0; font-size: 11px; line-height: 1.7; color: #000; text-align: justify; hyphens: none;">
+
+                        <p style="
+                            margin: 0;
+                            font-size: 12px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            color: #8c8b8b;
+                        ">
+                            Relación con el contexto y la arquitectura
+                        </p>
+
+
+                        <p style="
+                            margin: 6px 0 0 0;
+                            font-size: 11px;
+                            line-height: 1.7;
+                            color: #000;
+                            text-align: justify;
+                            hyphens: none;
+                        ">
+                            Entendemos el jardín / espacio exterior como un lugar fundamental en el habitar, en la forma en que nos relacionamos con el contexto y con el medio natural. El jardín es para nosotros un espacio de gran potencial, y nos gusta proponer espacios, actividades y dinámicas de uso. Velamos por hacer espacios integrados al lugar donde se emplazan, procurando una lectura adecuada del emplazamiento (viento, sol, luz, vistas etc…) usar materiales locales, especies nativas (dependiendo de disponibilidad). Consideramos la arquitectura como parte del contexto. Nos interesa proponer jardines con materiales y lógicas que dialoguen y potencien lo arquitectónico y construido.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- BAJA MANTENCIÓN -->
+
+                <div class="item-row">
+
+                    <div>
+
+                        <p style="
+                            margin: 0;
+                            font-size: 12px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            letter-spacing: 2px;
+                            color: #8c8b8b;
+                        ">
+                            Baja mantención / consumo hídrico
+                        </p>
+
+
+                        <p style="
+                            margin: 6px 0 0 0;
+                            font-size: 11px;
+                            line-height: 1.7;
+                            color: #000;
+                            text-align: justify;
+                            hyphens: none;
+                        ">
                             Ofrecemos un servicio profesional de paisajismo especializado en diseños con bajo requerimiento hídrico, ideales para cuidar el medio ambiente y reducir el consumo de agua sin sacrificar la belleza y funcionalidad de tus espacios exteriores. Nuestro enfoque combina plantas resistentes, sistemas de riego eficiente y técnicas sostenibles que aseguran un jardín atractivo, saludable y de bajo mantenimiento.
                         </p>
+
                     </div>
+
                 </div>
 
-            </div> <!-- FIN ITEMS-LIST -->
 
-         
+            </div>
 
-        </div> <!-- FIN TEXT-COLUMN -->
-
-        <!-- GRILLA DE FOTOS -->
-        <div class="photo-grid">
-            <div class="photo-item"><img src="images/FLORA/LIVIANO Salvia  .webp" alt="Huente" loading="lazy"></div>
-            <div class="photo-item"><img src="images/FLORA/LIVIANO 03 CANELA  .webp" alt="Canela" loading="lazy"></div>
-            <div class="photo-item"><img src="images/FLORA/LIVIANO 10 ZAPALLAR .webp" alt="Zapallar" loading="lazy"></div>
-            <div class="photo-item"><img src="images/FLORA/LIVIANO 07 ZAPALLAR .webp" alt="Zapallar" loading="lazy"></div>
-            <div class="photo-item"><img src="images/FLORA/LIVIANO TH copia .webp" alt="Batuco" loading="lazy"></div>
-            <div class="photo-item"><img src="images/FLORA/LIVIANO DSC07067 copia .webp" alt="Chuchiñi" loading="lazy"></div>
-            <div class="photo-item"><img src="images/FLORA/LIVIANO DSC07052 copia .webp" alt="Cuncumen" loading="lazy"></div>
-            <div class="photo-item"><img src="images/FLORA/LIVIANO PUYA.webp" alt="Puya" loading="lazy"></div>
         </div>
+
+
+        <!-- =================================================
+             GRILLA DE FOTOS
+        ================================================== -->
+
+        <div class="photo-grid">
+
+
+            <div class="photo-item">
+                <img
+                    src="images/FLORA/LIVIANO Salvia  .webp"
+                    alt="Vegetación de jardín"
+                    loading="lazy"
+                >
+            </div>
+
+
+            <div class="photo-item">
+                <img
+                    src="images/FLORA/LIVIANO 03 CANELA  .webp"
+                    alt="Paisajismo en Canela"
+                    loading="lazy"
+                >
+            </div>
+
+
+            <div class="photo-item">
+                <img
+                    src="images/FLORA/LIVIANO 10 ZAPALLAR .webp"
+                    alt="Paisajismo en Zapallar"
+                    loading="lazy"
+                >
+            </div>
+
+
+            <div class="photo-item">
+                <img
+                    src="images/FLORA/LIVIANO 07 ZAPALLAR .webp"
+                    alt="Jardín en Zapallar"
+                    loading="lazy"
+                >
+            </div>
+
+
+            <div class="photo-item">
+                <img
+                    src="images/FLORA/LIVIANO TH copia .webp"
+                    alt="Vegetación de jardín"
+                    loading="lazy"
+                >
+            </div>
+
+
+            <div class="photo-item">
+                <img
+                    src="images/FLORA/LIVIANO DSC07067 copia .webp"
+                    alt="Paisajismo en Chuchiñi"
+                    loading="lazy"
+                >
+            </div>
+
+
+            <div class="photo-item">
+                <img
+                    src="images/FLORA/LIVIANO DSC07052 copia .webp"
+                    alt="Vegetación de jardín en Cuncumén"
+                    loading="lazy"
+                >
+            </div>
+
+
+            <div class="photo-item">
+                <img
+                    src="images/FLORA/LIVIANO PUYA.webp"
+                    alt="Puya nativa de Chile"
+                    loading="lazy"
+                >
+            </div>
+
+
+        </div>
+
 
     </section>
 
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
     <footer>
-        <div class="footer-text">LOICA ESTUDIO ® 2026</div>
-        <div class="footer-text">Arquitectura y Paisajismo</div>
+
+        <div class="footer-text">
+            LOICA ESTUDIO ® 2026
+        </div>
+
+        <div class="footer-text">
+            Arquitectura y Paisajismo
+        </div>
+
     </footer>
 
+
 </body>
+
 </html>
