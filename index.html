@@ -107,15 +107,20 @@
         z-index: 10;
     }
 
-    .logo {
-        height: 75px;
-        width: auto;
-        display: block;
-        opacity: 0;
-        animation: fadeIn 1.75s ease 0.1s forwards;
-        align-self: flex-start;
-        margin-left: 0px;
-    }
+   .logo {
+    height: 75px;
+    width: auto;
+    display: block;
+    opacity: 0;
+    animation: fadeIn 4s ease-in-out 1s forwards;
+    align-self: flex-start;
+    margin-left: 0px;
+}
+
+@keyframes logoAparece {
+    0%   { opacity: 0; filter: blur(8px); transform: translateY(10px); }
+    100% { opacity: 1; filter: none;      transform: translateY(0); }
+}
 
     .palabras-wrap {
         position: relative;
@@ -174,7 +179,7 @@
         text-transform: uppercase;
         color: #000;
         text-decoration: none;
-        border-bottom: 1px solid #000;
+        border-bottom: 0px solid #000;
         padding-bottom: 3px;
         margin-top: 20px;
         opacity: 0;
