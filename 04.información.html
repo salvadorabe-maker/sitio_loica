@@ -63,6 +63,20 @@
     <style>
 
         /* =====================================================
+           VARIABLES
+           --alto-footer: alto del footer.
+           --aire-inferior: espacio libre entre las fotos y la
+           línea del footer (en escritorio). Si lo quieres con
+           más o menos aire, cambia solo este número.
+        ====================================================== */
+
+        :root {
+            --alto-footer: 43px;
+            --aire-inferior: 50px;
+        }
+
+
+        /* =====================================================
            BASE
         ====================================================== */
 
@@ -79,35 +93,83 @@
 
 
         /* =====================================================
+           ENCABEZADO (logo y menú: mismo CSS en las 4 páginas)
+        ====================================================== */
+
+        .encabezado {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 13px 25px 0 30px;
+            z-index: 1000;
+        }
+
+        .logo-wrap img {
+            height: 50px;
+            width: auto;
+            display: block;
+        }
+
+        .encabezado nav {
+            margin-top: 2px;
+            font-family: Helvetica, Arial, sans-serif;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px; /* espacio entre palabras */
+        }
+
+        .encabezado nav a {
+            font-size: 13px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: #6b6a6a;
+        }
+
+        /* Un gris distinto para cada palabra (de más claro a más oscuro).
+           Van ANTES de la regla de la página actual, para que esta las pise. */
+        .encabezado nav a:nth-child(1) { color: #7f7e7e; } /* Proceso */
+        .encabezado nav a:nth-child(2) { color: #5c5b5b; } /* Información */
+        .encabezado nav a:nth-child(3) { color: #3a3a3a; } /* Contacto */
+
+        /* Página actual: texto negro y línea fina y corta debajo */
+        .encabezado nav a[aria-current="page"] {
+            color: #000000;
+            position: relative;
+            display: inline-block;
+        }
+
+        .encabezado nav a[aria-current="page"]::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -4px;
+            width: 50%;
+            height: 1px;
+            background-color: #000000;
+            transform: translateX(-50%);
+        }
+
+
+        /* =====================================================
            CONTENEDOR PRINCIPAL
         ====================================================== */
 
         .info-wrapper {
             display: flex;
             gap: 40px;
-            padding: 40px 25px;
+            padding:
+                120px
+                25px
+                calc(var(--alto-footer) + var(--aire-inferior))
+                25px;
             box-sizing: border-box;
-            height: calc(100vh - 50px);
+            height: 100vh;
             align-items: flex-start;
             position: relative;
-        }
-
-
-        /* =====================================================
-           BOTÓN VOLVER
-        ====================================================== */
-
-        .btn-volver {
-            position: absolute;
-            top: 15px;
-            right: 25px;
-            font-size: 10px;
-            font-weight: 700;
-            text-decoration: none;
-            color: #000000;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            z-index: 20;
         }
 
 
@@ -120,7 +182,7 @@
             min-width: 300px;
             height: 100%;
             overflow-y: auto;
-            margin-top: 40px;
+            margin-top: 0;
             padding-right: 15px;
 
             opacity: 0;
@@ -163,9 +225,9 @@
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 10px;
-            width: 50%;
+            width: 44%;
             max-height: 100%;
-            margin-top: 40px;
+            margin-top: 0;
         }
 
         .photo-item {
@@ -308,6 +370,18 @@
             }
 
 
+            /* ENCABEZADO (en móvil se desplaza con la página, como en Contacto) */
+
+            .encabezado {
+                position: static !important;
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 15px !important;
+                padding: 20px 20px 0 20px !important;
+            }
+
+            /* CONTENEDOR */
+
             .info-wrapper {
 
                 flex-direction: column !important;
@@ -317,7 +391,7 @@
                 height: auto !important;
 
                 padding:
-                    60px
+                    40px
                     20px
                     120px
                     20px !important;
@@ -334,7 +408,7 @@
 
                 padding-right: 0 !important;
 
-                margin-top: 40px !important;
+                margin-top: 0 !important;
             }
 
 
@@ -397,20 +471,6 @@
                 width: 100% !important;
             }
 
-
-            /* BOTÓN VOLVER */
-
-            .btn-volver {
-
-                position: fixed !important;
-
-                top: 15px !important;
-
-                right: 20px !important;
-
-                z-index: 3000 !important;
-            }
-
         }
 
     </style>
@@ -422,17 +482,31 @@
 
 
     <!-- =====================================================
+         ENCABEZADO
+    ====================================================== -->
+
+    <header class="encabezado">
+
+        <div class="logo-wrap">
+            <a href="02.Proyectos.html">
+                <img src="images/LOICA.png" alt="Loica Estudio">
+            </a>
+        </div>
+
+        <nav>
+            <a href="06.proceso.html" hidden style="font-size: 13px; color: #7f7e7e; text-decoration: none; text-transform: uppercase;">Proceso</a>
+            <a href="04.información.html" aria-current="page">Información</a>
+            <a href="03.contacto.html">Contacto</a>
+        </nav>
+
+    </header>
+
+
+    <!-- =====================================================
          CONTENIDO PRINCIPAL
     ====================================================== -->
 
     <section class="info-wrapper">
-
-
-        <!-- BOTÓN VOLVER -->
-
-        <a href="02.Proyectos.html" class="btn-volver">
-            [ Volver ]
-        </a>
 
 
         <!-- =================================================
@@ -442,18 +516,20 @@
         <div class="text-column">
 
 
-            <!-- TÍTULO -->
+            
+<!-- TÍTULO -->
 
-            <h2 style="
-                margin: 0 0 8px 0;
-                font-size: 16px;
-                font-weight: 700;
-                text-transform: uppercase;
-                letter-spacing: 2px;
-                color: #000;
-            ">
-                Nuestro Trabajo
-            </h2>
+<h2 style="
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #000;
+">
+    Nuestro Trabajo
+</h2>
+
 
 
             <!-- SUBTÍTULO -->

@@ -7,7 +7,7 @@
 
 <meta charset="utf-8" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <!-- GOOGLE ANALYTICS -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZV05TJ033Q"></script>
@@ -24,7 +24,7 @@
 <!-- Meta descripción y canónica -->
 <meta name="description" content="Contacta a Loica Estudio y a Alfonso Abé Castro. Arquitectura, paisajismo, diseño de jardines y ejecución de obra en Santiago y Chile.">
 
-<link rel="canonical" href="https://loicaestudio.cl/contacto.html">
+<link rel="canonical" href="https://loicaestudio.cl/03.contacto.html">
 
 <link rel="icon" type="image/png" href="images/favicon.png">
 
@@ -34,7 +34,7 @@
   "@context": "https://schema.org",
   "@type": "ContactPage",
   "name": "Contacto - Loica Estudio",
-  "url": "https://loicaestudio.cl/contacto.html",
+  "url": "https://loicaestudio.cl/03.contacto.html",
   "mainEntity": {
     "@type": "ProfessionalService",
     "name": "Loica Estudio",
@@ -67,31 +67,65 @@
         font-family: 'Helvetica', sans-serif;
     }
 
-    /* BOTÓN VOLVER */
-    .btn-volver {
-        position: absolute;
-        top: 20px;
-        right: 25px;
-        font-size: 10px;
-        font-weight: 700;
-        text-decoration: none;
-        color: #000000;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        z-index: 3000;
-    }
+    /* =====================================================
+       ENCABEZADO (logo y menú: mismo CSS en las 4 páginas)
+    ===================================================== */
 
-    /* LOGO */
-    .logo-wrap {
+    .encabezado {
         position: absolute;
-        top: 13px;
-        left: 30px;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 13px 25px 0 30px;
+        z-index: 1000;
     }
 
     .logo-wrap img {
         height: 50px;
         width: auto;
         display: block;
+    }
+
+    .encabezado nav {
+        margin-top: 2px;
+        font-family: Helvetica, Arial, sans-serif;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px; /* espacio entre palabras */
+    }
+
+    .encabezado nav a {
+        font-size: 13px;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #6b6a6a;
+    }
+
+    /* Un gris distinto para cada palabra (de más claro a más oscuro).
+       Van ANTES de la regla de la página actual, para que esta las pise. */
+    .encabezado nav a:nth-child(1) { color: #7f7e7e; } /* Proceso */
+    .encabezado nav a:nth-child(2) { color: #5c5b5b; } /* Información */
+    .encabezado nav a:nth-child(3) { color: #3a3a3a; } /* Contacto */
+
+    /* Página actual: texto negro y línea fina y corta debajo */
+    .encabezado nav a[aria-current="page"] {
+        color: #000000;
+        position: relative;
+        display: inline-block;
+    }
+
+    .encabezado nav a[aria-current="page"]::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -4px;
+        width: 50%;
+        height: 1px;
+        background-color: #000000;
+        transform: translateX(-50%);
     }
 
     /* CONTENEDOR PRINCIPAL (PC) */
@@ -249,15 +283,12 @@
             width: 100% !important;
         }
 
-        .btn-volver {
-            position: fixed !important;
-            top: 20px !important;
-            right: 20px !important;
-            z-index: 3000 !important;
-        }
-
-        .logo-wrap {
+        /* ENCABEZADO (en móvil se desplaza con la página) */
+        .encabezado {
             position: static !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            gap: 15px !important;
             padding: 20px 20px 0 20px !important;
         }
 
@@ -342,13 +373,25 @@
 <body>
 
 
-<a href="02.Proyectos.html" class="btn-volver">[ Volver ]</a>
+<!-- =========================================
+     ENCABEZADO
+========================================== -->
 
-<div class="logo-wrap">
-    <a href="02.Proyectos.html">
-        <img src="images/LOICA.png" alt="Loica Estudio">
-    </a>
-</div>
+<header class="encabezado">
+
+    <div class="logo-wrap">
+        <a href="02.Proyectos.html">
+            <img src="images/LOICA.png" alt="Loica Estudio">
+        </a>
+    </div>
+
+    <nav>
+        <a href="06.proceso.html" hidden style="font-size: 13px; color: #7f7e7e; text-decoration: none; text-transform: uppercase;">Proceso</a>
+        <a href="04.información.html">Información</a>
+        <a href="03.contacto.html" aria-current="page">Contacto</a>
+    </nav>
+
+</header>
 
 <div class="main-container">
 
@@ -555,7 +598,6 @@
     <p>Arquitectura y Paisajismo</p>
 
 </footer>
-```
 
 </body>
 
