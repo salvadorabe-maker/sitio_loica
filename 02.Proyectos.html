@@ -77,6 +77,16 @@
         display: block;
     }
 
+    /* NOMBRE DEL PROYECTO: transición suave */
+    #visor-proyectos {
+        opacity: 0;
+        transition: opacity 0.35s ease;
+    }
+
+    #visor-proyectos.visible {
+        opacity: 1;
+    }
+
     body {
         margin: 0;
         padding: 0;
@@ -320,22 +330,41 @@
         </a>
 
         <a href="05.14.LAS PALMERAS.html" class="item-proyecto" onmouseover="mostrarNombre('PROYECTO PARQUE LAS PALMERAS | RENCA | MI PARQUE | 2019 - 2026')" onmouseout="limpiarNombre()" style="cursor: pointer;">
-            <img src="images/00 PORTADAS DE PROYECTO/14 Las Palmeras.webp" style="width: 100%; display: block;">
+            <img src="images/LAS PALMERAS/lpmasterplan2 copia.webp" style="width: 100%; display: block;">
         </a>
 
         <a href="05.15.PARQUE ESTERO.html" class="item-proyecto" onmouseover="mostrarNombre('PARQUE ESTERO EL CARBÓN | CONSTITUCIÓN | MI PARQUE ')" onmouseout="limpiarNombre()" style="cursor: pointer;">
-            <img src="images/00 PORTADAS DE PROYECTO/15 Constitución.webp" style="width: 100%; display: block;">
+            <img src="images/Parque estero el Carbón, Constitución/iloveimg-compressed/nuevaimagen01.jpg" style="width: 100%; display: block;">
         </a>
 
     </main>
 
     <script>
+        const visor = document.getElementById('visor-proyectos');
+        let temporizador;
+
         function mostrarNombre(texto) {
-            document.getElementById('visor-proyectos').innerText = texto;
+            clearTimeout(temporizador);
+
+            // Si ya hay un nombre visible y es distinto: se desvanece, cambia y reaparece
+            if (visor.classList.contains('visible') && visor.innerText !== texto) {
+                visor.classList.remove('visible');
+                temporizador = setTimeout(() => {
+                    visor.innerText = texto;
+                    visor.classList.add('visible');
+                }, 250);
+            } else {
+                visor.innerText = texto;
+                visor.classList.add('visible');
+            }
         }
 
         function limpiarNombre() {
-            document.getElementById('visor-proyectos').innerText = '';
+            clearTimeout(temporizador);
+            // Pequeña espera para no parpadear al cruzar el espacio entre fotos
+            temporizador = setTimeout(() => {
+                visor.classList.remove('visible');
+            }, 100);
         }
     </script>
 
