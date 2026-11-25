@@ -56,6 +56,20 @@
 
 <style>
 
+    /* =====================================================
+       VARIABLES
+       --alto-footer: alto del footer (igual en todas las páginas).
+    ===================================================== */
+
+    :root {
+        --alto-footer: 43px;
+    }
+
+
+    /* =====================================================
+       BASE
+    ===================================================== */
+
     html, body {
         margin: 0;
         padding: 0;
@@ -64,7 +78,7 @@
         overflow-x: hidden;
         overflow-y: hidden;
         background-color: #FBF9EF;
-        font-family: 'Helvetica', sans-serif;
+        font-family: Helvetica, Arial, sans-serif;
     }
 
     /* =====================================================
@@ -148,10 +162,12 @@
         margin-top: 100px;
     }
 
-    /* CARRUSEL DE COLABORADORES (PC) */
+    /* CARRUSEL DE COLABORADORES (PC)
+       bottom: alto del footer + 17px de aire. Si lo quieres más
+       cerca o más lejos del footer, cambia solo el 17. */
     .colaboradores-section {
         position: absolute;
-        bottom: 60px;
+        bottom: calc(var(--alto-footer) + 17px);
         left: 25px;
         width: 320px;
         box-sizing: border-box;
@@ -162,7 +178,7 @@
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: #aaa;
+        color: #585858;
         margin-bottom: 12px;
     }
 
@@ -246,29 +262,38 @@
         display: block;
     }
 
-    /* FOOTER (PC) */
-    .footer-fixed {
+
+    /* =====================================================
+       FOOTER (mismo bloque en todas las páginas)
+    ===================================================== */
+
+    footer {
         position: fixed;
-        bottom: 0;
         left: 0;
-        width: 100%;
-        border-top: 1px solid #000000;
-        padding: 10px 25px 15px 25px;
-        box-sizing: border-box;
-        background-color: #FBF9EF;
+        right: 0;
+        bottom: 0;
+        height: var(--alto-footer);
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0 25px;
+        box-sizing: border-box;
+        background-color: #FBF9EF;
+        border-top: 1px solid #000000;
+        font-family: Helvetica, Arial, sans-serif;
+        z-index: 10;
     }
 
-    .footer-fixed p {
-        font-size: 10px;
+    .footer-text {
+        margin: 0;
+        font-size: 9.25px;
+        line-height: 1;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 2px;
-        color: #646464;
-        margin: 0;
+        color: #737373;
     }
+
 
     /* ==========================================
        RESPONSIVE MÓVIL
@@ -346,21 +371,18 @@
             overflow: hidden !important;
         }
 
-        .footer-fixed {
-            position: fixed !important;
-            bottom: 0 !important;
-            left: 0 !important;
-            background-color: #FBF9EF !important;
-            padding: 15px 20px !important;
-            box-sizing: border-box !important;
-            border-top: 1px solid #00000022 !important;
-            z-index: 2000;
-            width: 100% !important;
+        /* FOOTER (móvil: textos apilados, igual que en Información) */
+        footer {
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            padding: 0 20px;
+            text-align: center;
         }
 
-        .footer-fixed p {
-            font-size: 8px !important;
-            text-align: center !important;
+        .footer-text {
+            font-size: 9px;
+            letter-spacing: 1px;
         }
 
     }
@@ -417,7 +439,7 @@
                 </p>
 
                 <p style="margin: 3px 0 0 0; color: #1a1a1a; letter-spacing: 0.5px;">
-                    Málaga 888, Las Condes, Santiago, Chile
+                    Málaga 888, Las Condes, Santiago de Chile
                 </p>
             </div>
 
@@ -438,7 +460,7 @@
 
                 <p style="margin: 3px 0 0 0;">
                     <a href="mailto:alfonsoabe88@gmail.com"
-                       style="color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #1a1a1a; letter-spacing: 0.5px;">
+                       style="color: #1a1a1a; text-decoration: none; border-bottom: 0px solid #1a1a1a; letter-spacing: 0.5px;">
                         alfonsoabe88@gmail.com
                     </a>
                 </p>
@@ -453,7 +475,7 @@
                 <p style="margin: 4px 0 0 0;">
                     <a href="https://www.instagram.com/loica_estudio/"
                        target="_blank"
-                       style="color: #000; text-decoration: none; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: 1px;">
+                       style="color: #828282; text-decoration: none; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: 1px;">
                         Instagram ↗
                     </a>
                 </p>
@@ -461,7 +483,7 @@
                 <p style="margin: 6px 0 0 0;">
                     <a href="https://www.behance.net/alfonsoab"
                        target="_blank"
-                       style="color: #000; text-decoration: none; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: 1px;">
+                       style="color: #828282; text-decoration: none; text-transform: uppercase; font-size: 10px; font-weight: 700; letter-spacing: 1px;">
                         Behance ↗
                     </a>
                 </p>
@@ -591,11 +613,16 @@
 
 </div>
 
-<footer class="footer-fixed" style="display: flex; justify-content: space-between;">
 
-    <p>LOICA ESTUDIO ® 2026</p>
+<!-- =========================================
+     FOOTER (mismo HTML en todas las páginas)
+========================================== -->
 
-    <p>Arquitectura y Paisajismo</p>
+<footer>
+
+    <div class="footer-text">LOICA ESTUDIO ® 2026</div>
+
+    <div class="footer-text">Arquitectura y Paisajismo</div>
 
 </footer>
 
